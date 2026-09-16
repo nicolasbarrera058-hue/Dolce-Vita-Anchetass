@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="catalogo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catálogo | Dolce Vita Anchetas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+        <!-- ==================================================
+     BARRA
+================================================== -->
+
+<header class="barra">
+
+    <div class="logo">
+
+        <img
+            src="../imágenes/logo.jpeg"
+            alt="Logo Dolce Vita Anchetas"
+        >
+
+    </div>
+
+
+    <h1 class="titulo">
+        DOLCE VITA ANCHETAS
+    </h1>
+
+
+    <div
+        class="menu-btn"
+        onclick="abrirMenu()"
+        aria-label="Abrir menú"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</header>
+
+
+<!-- ==================================================
+     MENÚ IGUAL A LA PÁGINA PRINCIPAL
+================================================== -->
+
+<nav class="menu" id="menu">
+
+    <a href="../index.html">
+        <span class="icono-menu">🏠</span>
+        Inicio
+    </a>
+
+    <a href="catalogo.html?categoria=anchetas">
+        <span class="icono-menu">🎁</span>
+        Anchetas
+    </a>
+
+    <a href="catalogo.html?categoria=regalos">
+        <span class="icono-menu">🎀</span>
+        Regalos
+    </a>
+
+    <a href="catalogo.html?categoria=flores">
+        <span class="icono-menu">🌷</span>
+        Flores
+    </a>
+
+    <a href="catalogo.html?categoria=todos">
+        <span class="icono-menu">🛍️</span>
+        Productos
+    </a>
+
+    <a href="#contacto">
+        <span class="icono-menu">📞</span>
+        Contacto
+    </a>
+
+    <a href="../ruleta.html">
+        <span class="icono-menu">🎡</span>
+        Ruleta de regalos
+    </a>
+
+    <a href="../calendario.html">
+        <span class="icono-menu">📅</span>
+        Calendario
+    </a>
+
+    <a href="../creadora.html">
+        <span class="icono-menu">👑</span>
+        La creadora
+    </a>
+
+</nav>
+
+
+<!-- ==================================================
+     ENCABEZADO
+================================================== -->
+
+<section class="catalogo-hero">
+
+    <span class="mini-titulo">
+        ✦ DOLCE VITA ANCHETAS ✦
+    </span>
+
+    <h2>
+        Nuestro catálogo 💕
+    </h2>
+
+    <p>
+        Encuentra anchetas, desayunos sorpresa,
+        regalos personalizados y detalles hechos
+        con mucho amor para cada ocasión.
+    </p>
+
+</section>
+
+
+<!-- ==================================================
+     FILTROS
+================================================== -->
+
+<div class="filtros-catalogo">
+
+    <button
+        class="filtro activo"
+        onclick="filtrarProductos('todos', this)"
+    >
+        🛍️ Todos
+    </button>
+
+    <button
+        class="filtro"
+        onclick="filtrarProductos('anchetas', this)"
+    >
+        🎁 Anchetas
+    </button>
+
+    <button
+        class="filtro"
+        onclick="filtrarProductos('regalos', this)"
+    >
+        🎀 Regalos
+    </button>
+
+    <button
+        class="filtro"
+        onclick="filtrarProductos('flores', this)"
+    >
+        🌷 Flores
+    </button>
+
+</div>
+
+
+<!-- ==================================================
+     PRODUCTOS
+================================================== -->
+
+<section class="productos-container">
+
+
+    <!-- ================= ANCHETA 1 ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="anchetas"
+        onclick="mostrarProducto(
+            'Ancheta Amor',
+            '$124.000',
+            'Rosado',
+            'Ancheta especial preparada para sorprender a esa persona favorita.',
+            'a.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            ⭐ Destacado
+        </span>
+
+        <img
+            src="a.jpeg"
+            alt="Ancheta Amor"
+        >
+
+        <h3>
+            Ancheta Amor
+        </h3>
+
+        <div class="precio">
+            $124.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Ancheta Amor',
+                124000,
+                'a.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= RAMO ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="flores"
+        onclick="mostrarProducto(
+            'Ramo de Rosas',
+            '$120.000',
+            'Rojo',
+            'Hermoso ramo de rosas para ocasiones especiales.',
+            'ramo.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🌹 Flores
+        </span>
+
+        <img
+            src="ramo.jpeg"
+            alt="Ramo de Rosas"
+        >
+
+        <h3>
+            Ramo de Rosas
+        </h3>
+
+        <div class="precio">
+            $120.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Ramo de Rosas',
+                120000,
+                'ramo.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= DESAYUNO ESPECIAL ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Desayuno Especial',
+            '$85.000',
+            'Personalizable',
+            'Caja con mensaje bonito, tarjeta personalizada, waffles, ensalada de frutas, jugo de naranja, bombones de chocolate, galletas, chocolatina Jet, decoración romántica y cubiertos.',
+            'DESAYUNO.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            ☀️ Desayuno
+        </span>
+
+        <img
+            src="DESAYUNO.jpeg"
+            alt="Desayuno Especial"
+        >
+
+        <h3>
+            Desayuno Especial
+        </h3>
+
+        <div class="precio">
+            $85.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Desayuno Especial',
+                85000,
+                'DESAYUNO.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= LETRA ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="flores"
+        onclick="mostrarProducto(
+            'Letra Premium',
+            '$92.000',
+            'Personalizable',
+            'Elegante detalle floral personalizado para sorprender en una ocasión especial.',
+            'letra.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            ✨ Premium
+        </span>
+
+        <img
+            src="letra.jpeg"
+            alt="Letra Premium"
+        >
+
+        <h3>
+            Letra Premium
+        </h3>
+
+        <div class="precio">
+            $92.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Letra Premium',
+                92000,
+                'letra.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= ANCHETA INFANTIL ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="anchetas"
+        onclick="mostrarProducto(
+            'Ancheta Infantil con Peluche',
+            '$115.000',
+            'Personalizable',
+            'Caja de madera decorada, peluche mediano personalizado, golosinas, maní, galletas Oreo, Trululu, papas naturales, decoración personalizada y globos.',
+            'ancheta.p.PNG'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🧸 Infantil
+        </span>
+
+        <img
+            src="ancheta.p.PNG"
+            alt="Ancheta Infantil"
+        >
+
+        <h3>
+            Ancheta Infantil con Peluche
+        </h3>
+
+        <div class="precio">
+            $115.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Ancheta Infantil con Peluche',
+                115000,
+                'ancheta.p.PNG'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= REGALO PERSONALIZADO ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Regalo Personalizado',
+            '$85.000',
+            'Personalizable',
+            'Regalo personalizado para hombre o mujer. El precio puede variar según los productos elegidos y debe solicitarse con anticipación.',
+            '654.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            💝 Personalizable
+        </span>
+
+        <img
+            src="654.jpeg"
+            alt="Regalo Personalizado"
+        >
+
+        <h3>
+            Regalo Personalizado
+        </h3>
+
+        <div class="precio">
+            Desde $85.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Regalo Personalizado',
+                85000,
+                '654.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= DESAYUNO CANASTA ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Desayuno con Canasta',
+            '$85.000',
+            'Personalizable',
+            'Canasta de madera, tarjeta personalizada, waffles con arequipe o salsa de fresa, Milo, jugo de naranja, bombones, galletas, maní y decoración romántica.',
+            'desayuno2.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🧺 Desayuno
+        </span>
+
+        <img
+            src="desayuno2.jpeg"
+            alt="Desayuno con Canasta"
+        >
+
+        <h3>
+            Desayuno con Canasta
+        </h3>
+
+        <div class="precio">
+            $85.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Desayuno con Canasta',
+                85000,
+                'desayuno2.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= DESAYUNO CLÁSICO ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Desayuno Clásico',
+            '$65.000',
+            'Personalizable',
+            'Caja con mensaje bonito, waffles con Nutella o salsa de fresa, jugo de naranja, bombones de chocolate, mashmellos, chocolatina Gol, maní, decoración romántica y cubiertos.',
+            'desayuno5.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            💕 Clásico
+        </span>
+
+        <img
+            src="desayuno5.jpeg"
+            alt="Desayuno Clásico"
+        >
+
+        <h3>
+            Desayuno Clásico
+        </h3>
+
+        <div class="precio">
+            $65.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Desayuno Clásico',
+                65000,
+                'desayuno5.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= DESAYUNO SENCILLO ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Desayuno Sencillo',
+            '$55.000',
+            'Personalizable',
+            'Caja con mensaje bonito, waffles con arequipe o salsa de fresa, jugo de naranja, ensalada de frutas, decoración romántica y cubiertos.',
+            'desayuno1.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🌸 Económico
+        </span>
+
+        <img
+            src="desayuno1.jpeg"
+            alt="Desayuno Sencillo"
+        >
+
+        <h3>
+            Desayuno Sencillo
+        </h3>
+
+        <div class="precio">
+            $55.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Desayuno Sencillo',
+                55000,
+                'desayuno1.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= LÁMPARA 64 ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Lámpara de Inicial',
+            '$64.000',
+            'Personalizable',
+            'Lámpara con la inicial que elijas, pilas, caja bonita con mensaje, fotografía en papel fotográfico con mensaje personalizado y 2 Mini Jet.',
+            'letra2.PNG'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            💡 Personalizado
+        </span>
+
+        <img
+            src="letra2.PNG"
+            alt="Lámpara de Inicial"
+        >
+
+        <h3>
+            Lámpara de Inicial
+        </h3>
+
+        <div class="precio">
+            $64.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Lámpara de Inicial',
+                64000,
+                'letra2.PNG'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= LÁMPARA 90.200 ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Lámpara de Inicial Premium',
+            '$90.200',
+            'Personalizable',
+            'Lámpara de la inicial que elijas, pilas, caja con mensaje, fotografías en papel fotográfico, 3 Ferrero Rocher, uvas, manzana y nota personalizada.',
+            'letra.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            ✨ Premium
+        </span>
+
+        <img
+            src="letra.jpeg"
+            alt="Lámpara Premium"
+        >
+
+        <h3>
+            Lámpara de Inicial Premium
+        </h3>
+
+        <div class="precio">
+            $90.200
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Lámpara de Inicial Premium',
+                90200,
+                'letra.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= PELUCHE GRANDE ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Peluche Grande Personalizado',
+            '$230.000',
+            'Personalizable',
+            'Peluche grande del tamaño que desees, 2 globos con helio, uno en forma de estrella o corazón y otro con mensaje, además de tarjeta personalizada con mensaje y fotografías.',
+            'peluche.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🧸 Especial
+        </span>
+
+        <img
+            src="peluche.jpeg"
+            alt="Peluche Grande Personalizado"
+        >
+
+        <h3>
+            Peluche Grande Personalizado
+        </h3>
+
+        <div class="precio">
+            $230.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Peluche Grande Personalizado',
+                230000,
+                'peluche.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= REGALO HOMBRE MUJER ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Regalo para Hombre o Mujer',
+            '$85.000',
+            'Personalizable',
+            'Regalo preparado para hombre o mujer. Se solicita con mínimo 3 días de anticipación y el precio puede variar según lo que quieras incluir.',
+            'locion.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            🎁 A tu gusto
+        </span>
+
+        <img
+            src="locion.jpeg"
+            alt="Regalo para Hombre o Mujer"
+        >
+
+        <h3>
+            Regalo para Hombre o Mujer
+        </h3>
+
+        <div class="precio">
+            Desde $85.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Regalo para Hombre o Mujer',
+                85000,
+                'locion.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= ANCHETA ESPECIAL ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="anchetas"
+        onclick="mostrarProducto(
+            'Ancheta Especial',
+            '$124.000',
+            'Personalizable',
+            'Base de madera decorada con cinta y moño, decoración con globos, arco de madera con mensaje, globos, mashmello, maní especial, gomitas, Oka Looka, chocolatina Jet Blanca, galleta, Chocmelos y decoración especial.',
+            'inf.jpeg'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            👑 Destacada
+        </span>
+
+        <img
+            src="inf.jpeg"
+            alt="Ancheta Especial"
+        >
+
+        <h3>
+            Ancheta Especial
+        </h3>
+
+        <div class="precio">
+            $124.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Ancheta Especial',
+                124000,
+                'inf.jpeg'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- ================= CARTELERA ================= -->
+
+    <article
+        class="producto-card"
+        data-categoria="regalos"
+        onclick="mostrarProducto(
+            'Cartelera Personalizada',
+            '$45.000',
+            'Personalizable',
+            'Cartelera grande con fotografías a color, bonita caligrafía y mensaje personalizado con el largo que quieras. El diseño lo eliges tú.',
+            'cartelera.PNG'
+        )"
+    >
+
+        <span class="etiqueta-producto">
+            💌 Único
+        </span>
+
+        <img
+            src="cartelera.PNG"
+            alt="Cartelera Personalizada"
+        >
+
+        <h3>
+            Cartelera Personalizada
+        </h3>
+
+        <div class="precio">
+            $45.000
+        </div>
+
+        <button
+            class="boton-agregar"
+            onclick="event.stopPropagation(); agregarAlCarrito(
+                'Cartelera Personalizada',
+                45000,
+                'cartelera.PNG'
+            )"
+        >
+            🛍️ Agregar al carrito
+        </button>
+
+    </article>
+
+
+</section>
+
+
+<!-- ==================================================
+     CONTACTO
+================================================== -->
+
+<section
+    class="seccion-contacto"
+    id="contacto"
+>
+
+    <div class="contacto-encabezado">
+
+        <span>
+            ✦ ESTAMOS PARA TI ✦
+        </span>
+
+        <h2>
+            Hablemos de tu
+            <strong>
+                detalle perfecto
+            </strong>
+            💕
+        </h2>
+
+        <p>
+            ¿Tienes una idea especial?
+            ¿Quieres sorprender a alguien?
+            Escríbenos y juntos podemos crear
+            un detalle hecho especialmente
+            para esa persona. 🎁
+        </p>
+
+    </div>
+
+
+    <div class="contacto-grid">
+
+
+        <a
+            href="https://wa.me/573207036848"
+            target="_blank"
+            class="contacto-card"
+        >
+
+            <div class="contacto-icono">
+                💬
+            </div>
+
+            <div>
+
+                <span class="contacto-titulo">
+                    WhatsApp
+                </span>
+
+                <strong>
+                    320 703 6848
+                </strong>
+
+                <p>
+                    Escríbenos directamente
+                </p>
+
+            </div>
+
+            <div class="contacto-flecha">
+                →
+            </div>
+
+        </a>
+
+
+        <a
+            href="https://www.instagram.com/dolcevitanchetas/"
+            target="_blank"
+            class="contacto-card"
+        >
+
+            <div class="contacto-icono">
+                📸
+            </div>
+
+            <div>
+
+                <span class="contacto-titulo">
+                    Instagram
+                </span>
+
+                <strong>
+                    @dolcevitanchetas
+                </strong>
+
+                <p>
+                    Mira nuestras creaciones
+                </p>
+
+            </div>
+
+            <div class="contacto-flecha">
+                →
+            </div>
+
+        </a>
+
+
+        <a
+    href="https://www.google.com/maps/search/?api=1&query=Calle+87+%2350-27,+Aranjuez,+Medell%C3%ADn,+Colombia"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contacto-card"
+>
+
+    <div class="contacto-icono">
+        📍
+    </div>
+
+    <div>
+
+        <span class="contacto-titulo">
+            Punto físico
+        </span>
+
+        <strong>
+            Calle 87 # 50-27
+        </strong>
+
+        <p>
+            Aranjuez, Medellín · Ver en Google Maps
+        </p>
+
+    </div>
+
+    <div class="contacto-flecha">
+        →
+    </div>
+
+</a>
+
+
+        <div class="contacto-card">
+
+            <div class="contacto-icono">
+                🎁
+            </div>
+
+            <div>
+
+                <span class="contacto-titulo">
+                    Pedidos
+                </span>
+
+                <strong>
+                    Personalizados
+                </strong>
+
+                <p>
+                    Cuéntanos qué tienes en mente
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="contacto-final">
+
+        <div class="contacto-corazones">
+            ♡ ♡ ♡
+        </div>
+
+        <h3>
+            Tu idea + nuestro amor =
+            el regalo perfecto 💕
+        </h3>
+
+        <a
+            href="https://wa.me/573207036848?text=Hola%20Dolce%20Vita%20Anchetas%20💕%20Quiero%20información%20sobre%20un%20regalo."
+            target="_blank"
+            class="boton-contacto"
+        >
+            💝 Quiero hacer un pedido
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CARRITO
+================================================== -->
+
+<button
+    class="boton-carrito"
+    onclick="abrirCarrito()"
+>
+
+    <span class="icono-carrito">
+        🛍️
+    </span>
+
+    <span
+        class="contador-carrito"
+        id="contadorCarrito"
+    >
+        0
+    </span>
+
+</button>
+
+
+<div
+    class="fondo-carrito"
+    id="fondoCarrito"
+    onclick="cerrarCarrito()"
+></div>
+
+
+<aside
+    class="panel-carrito"
+    id="panelCarrito"
+>
+
+    <div class="carrito-header">
+
+        <div>
+
+            <span class="carrito-corazon">
+                ♡
+            </span>
+
+            <h2>
+                Mi carrito
+            </h2>
+
+            <p>
+                Detalles preparados con amor 💕
+            </p>
+
+        </div>
+
+        <button
+            class="cerrar-carrito"
+            onclick="cerrarCarrito()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="carrito-linea">
+
+        <span>✦</span>
+
+        <i></i>
+
+        <span>♡</span>
+
+        <i></i>
+
+        <span>✦</span>
+
+    </div>
+
+
+    <div
+        class="productos-carrito"
+        id="productosCarrito"
+    ></div>
+
+
+    <div
+        class="carrito-vacio"
+        id="carritoVacio"
+    >
+
+        <div class="carrito-vacio-icono">
+            🛍️
+        </div>
+
+        <h3>
+            Tu carrito está vacío
+        </h3>
+
+        <p>
+            Todavía no tienes detalles
+            en tu carrito.
+            ¡Encuentra algo bonito
+            para sorprender! 💕
+        </p>
+
+        <button
+            onclick="cerrarCarrito()"
+        >
+            ✨ Explorar regalos
+        </button>
+
+    </div>
+
+
+    <div
+        class="carrito-footer"
+        id="carritoFooter"
+    >
+
+        <div class="subtotal">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong
+                id="subtotalCarrito"
+            >
+                $0
+            </strong>
+
+        </div>
+
+        <p class="mensaje-envio">
+            ✨ El amor está a un clic de distancia
+        </p>
+
+        <button
+            class="boton-finalizar"
+            onclick="finalizarCompra()"
+        >
+            💝 Finalizar pedido
+        </button>
+
+        <button
+            class="seguir-comprando"
+            onclick="cerrarCarrito()"
+        >
+            ← Seguir comprando
+        </button>
+
+    </div>
+
+</aside>
+
+```html
+<!-- ==================================================
+     FORMULARIO FINALIZAR PEDIDO
+================================================== -->
+
+<div
+    class="modal-pedido"
+    id="modalPedido"
+>
+    <div class="formulario-pedido">
+
+        <button
+            class="cerrar-formulario"
+            onclick="cerrarFormularioPedido()"
+        >
+            ×
+        </button>
+
+        <div class="formulario-corazon">
+            💝
+        </div>
+
+        <span class="formulario-mini">
+            ✦ CASI TERMINAMOS ✦
+        </span>
+
+        <h2>
+            Completa tu pedido
+        </h2>
+
+        <p class="formulario-descripcion">
+            Déjanos tus datos para que
+            Dolce Vita Anchetas pueda
+            contactarte y confirmar tu pedido. 💕
+        </p>
+
+        <!-- NOMBRE COMPLETO -->
+        <div class="campo-formulario">
+            <label for="nombreCliente">
+                👤 Nombre completo
+            </label>
+
+            <input
+                type="text"
+                id="nombreCliente"
+                placeholder="Ej: Nicolás Barrera"
+                autocomplete="name"
+            >
+        </div>
+
+        <!-- CORREO -->
+        <div class="campo-formulario">
+            <label for="correoCliente">
+                📧 Correo electrónico
+            </label>
+
+            <input
+                type="email"
+                id="correoCliente"
+                placeholder="Ej: tucorreo@gmail.com"
+                autocomplete="email"
+            >
+        </div>
+
+        <!-- FECHA DEL PEDIDO -->
+        <div class="campo-formulario">
+            <label for="fechaPedido">
+                📅 ¿Para qué fecha quieres tu pedido?
+            </label>
+
+            <input
+                type="date"
+                id="fechaPedido"
+            >
+        </div>
+
+        <div
+            class="error-formulario"
+            id="errorFormulario"
+        >
+        </div>
+
+        <button
+            class="boton-enviar-pedido"
+            onclick="enviarPedidoWhatsApp()"
+        >
+            💝 Enviar pedido por WhatsApp
+        </button>
+
+        <button
+            class="cancelar-pedido"
+            onclick="cerrarFormularioPedido()"
+        >
+            Cancelar
+        </button>
+
+        <div class="decoracion-formulario">
+            ♡ ───── ♡ ───── ♡
+        </div>
+
+    </div>
+</div>
+```
+
+
+
+<!-- ==================================================
+     MODAL
+================================================== -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-contenido">
+
+        <button
+            class="cerrar"
+            onclick="cerrarProducto()"
+        >
+            ×
+        </button>
+
+        <img
+            id="modalImagen"
+            class="modal-imagen"
+            src=""
+            alt="Producto"
+        >
+
+        <div class="modal-info">
+
+            <h2
+                id="modalNombre"
+            >
+                Producto
+            </h2>
+
+            <div
+                class="modal-precio"
+                id="modalPrecio"
+            >
+                $0
+            </div>
+
+            <div class="dato">
+
+                🎨
+                <strong>
+                    Color:
+                </strong>
+
+                <span id="modalColor">
+                </span>
+
+            </div>
+
+            <p>
+                📝
+                <strong>
+                    Descripción:
+                </strong>
+            </p>
+
+            <p
+                id="modalDescripcion"
+            >
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+
+/* ==================================================
+   MENÚ
+================================================== */
+
+function abrirMenu() {
+
+    const menu =
+        document.getElementById("menu");
+
+    menu.classList.toggle("activo");
+
+}
+
+
+/* Cerrar menú al pulsar un enlace */
+
+document
+    .querySelectorAll(".menu a")
+    .forEach(enlace => {
+
+        enlace.addEventListener(
+            "click",
+            () => {
+
+                document
+                    .getElementById("menu")
+                    .classList.remove("activo");
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   FILTROS
+================================================== */
+
+function filtrarProductos(
+    categoria,
+    boton
+) {
+
+    document
+        .querySelectorAll(".filtro")
+        .forEach(
+            filtro =>
+                filtro.classList.remove("activo")
+        );
+
+    if (boton) {
+        boton.classList.add("activo");
+    }
+
+
+    const productos =
+        document.querySelectorAll(
+            ".producto-card"
+        );
+
+
+    productos.forEach(producto => {
+
+        const pertenece =
+            producto.dataset.categoria ===
+            categoria;
+
+
+        if (
+            categoria === "todos" ||
+            pertenece
+        ) {
+
+            producto.classList.remove(
+                "oculto"
+            );
+
+            producto.classList.remove(
+                "mostrando"
+            );
+
+            void producto.offsetWidth;
+
+            producto.classList.add(
+                "mostrando"
+            );
+
+        } else {
+
+            producto.classList.add(
+                "oculto"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* ==================================================
+   FILTRO DESDE EL MENÚ
+================================================== */
+
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const categoriaURL =
+    parametros.get("categoria");
+
+
+if (
+    categoriaURL &&
+    [
+        "todos",
+        "anchetas",
+        "regalos",
+        "flores"
+    ].includes(categoriaURL)
+) {
+
+    const boton =
+        document.querySelector(
+            `.filtro[onclick*="'${categoriaURL}'"]`
+        );
+
+    filtrarProductos(
+        categoriaURL,
+        boton
+    );
+
+}
+
+
+/* ==================================================
+   MODAL
+================================================== */
+
+function mostrarProducto(
+    nombre,
+    precio,
+    color,
+    descripcion,
+    imagen
+) {
+
+    document.getElementById(
+        "modalNombre"
+    ).textContent = nombre;
+
+
+    document.getElementById(
+        "modalPrecio"
+    ).textContent = precio;
+
+
+    document.getElementById(
+        "modalColor"
+    ).textContent = color;
+
+
+    document.getElementById(
+        "modalDescripcion"
+    ).textContent = descripcion;
+
+
+    document.getElementById(
+        "modalImagen"
+    ).src = imagen;
+
+
+    document
+        .getElementById("modal")
+        .classList.add("activo");
+
+}
+
+
+/* Cerrar modal */
+
+function cerrarProducto() {
+
+    document
+        .getElementById("modal")
+        .classList.remove("activo");
+
+}
+
+
+/* Cerrar fuera */
+
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                cerrarProducto();
+
+            }
+
+        }
+    );
+
+
+/* ESC */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            cerrarProducto();
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   CARRITO
+================================================== */
+
+let carrito = [];
+
+
+function abrirCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.add("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.add("activo");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function cerrarCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.remove("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.remove("activo");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* ==================================================
+   AGREGAR
+================================================== */
+
+function agregarAlCarrito(
+    nombre,
+    precio,
+    imagen
+) {
+
+    const existente =
+        carrito.find(
+            producto =>
+                producto.nombre === nombre
+        );
+
+
+    if (existente) {
+
+        existente.cantidad++;
+
+    } else {
+
+        carrito.push({
+
+            nombre:
+                nombre,
+
+            precio:
+                precio,
+
+            imagen:
+                imagen,
+
+            cantidad:
+                1
+
+        });
+
+    }
+
+
+    actualizarCarrito();
+
+    abrirCarrito();
+
+}
+
+
+/* ==================================================
+   ACTUALIZAR CARRITO
+================================================== */
+
+function actualizarCarrito() {
+
+    const contenedor =
+        document.getElementById(
+            "productosCarrito"
+        );
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+    const subtotal =
+        document.getElementById(
+            "subtotalCarrito"
+        );
+
+    const vacio =
+        document.getElementById(
+            "carritoVacio"
+        );
+
+    const footer =
+        document.getElementById(
+            "carritoFooter"
+        );
+
+
+    contenedor.innerHTML = "";
+
+
+    let cantidadTotal = 0;
+
+    let precioTotal = 0;
+
+
+    carrito.forEach(
+        (producto, indice) => {
+
+            cantidadTotal +=
+                producto.cantidad;
+
+
+            precioTotal +=
+                producto.precio *
+                producto.cantidad;
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "item-carrito";
+
+
+            item.innerHTML = `
+
+                <div class="item-imagen">
+
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}"
+                    >
+
+                </div>
+
+
+                <div class="item-info">
+
+                    <h4>
+                        ${producto.nombre}
+                    </h4>
+
+                    <div class="item-precio">
+                        ${formatearPrecio(
+                            producto.precio
+                        )}
+                    </div>
+
+
+                    <div class="cantidad">
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                -1
+                            )"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${producto.cantidad}
+                        </span>
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                1
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="eliminar-producto"
+                    onclick="eliminarProducto(
+                        ${indice}
+                    )"
+                >
+                    🗑️
+                </button>
+
+            `;
+
+
+            contenedor.appendChild(
+                item
+            );
+
+        }
+    );
+
+
+    contador.textContent =
+        cantidadTotal;
+
+
+    subtotal.textContent =
+        formatearPrecio(
+            precioTotal
+        );
+
+
+    if (
+        carrito.length === 0
+    ) {
+
+        vacio.style.display =
+            "flex";
+
+        footer.style.display =
+            "none";
+
+    } else {
+
+        vacio.style.display =
+            "none";
+
+        footer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* ==================================================
+   CANTIDAD
+================================================== */
+
+function cambiarCantidad(
+    indice,
+    cambio
+) {
+
+    carrito[indice].cantidad +=
+        cambio;
+
+
+    if (
+        carrito[indice].cantidad <= 0
+    ) {
+
+        carrito.splice(
+            indice,
+            1
+        );
+
+    }
+
+
+    actualizarCarrito();
+
+}
+
+/* ==================================================
+   FINALIZAR PEDIDO
+================================================== */
+
+function finalizarCompra() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "💕 Tu carrito está vacío."
+        );
+
+        return;
+    }
+
+    document
+        .getElementById("errorFormulario")
+        .textContent = "";
+
+    document
+        .getElementById("modalPedido")
+        .classList.add("activo");
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById("nombreCliente")
+            .focus();
+
+    }, 200);
+}
+
+
+
+/* ==================================================
+   ELIMINAR
+================================================== */
+
+function eliminarProducto(
+    indice
+) {
+
+    carrito.splice(
+        indice,
+        1
+    );
+
+    actualizarCarrito();
+
+}
+
+
+/* ==================================================
+   PRECIO
+================================================== */
+
+function formatearPrecio(
+    precio
+) {
+
+    return new Intl.NumberFormat(
+        "es-CO",
+        {
+            style: "currency",
+            currency: "COP",
+            maximumFractionDigits: 0
+        }
+    ).format(precio);
+
+}
+
+
+
+
+/* ==================================================
+   CERRAR FORMULARIO
+================================================== */
+
+function cerrarFormularioPedido() {
+
+    document
+        .getElementById("modalPedido")
+        .classList.remove("activo");
+
+}
+
+
+
+/* ==================================================
+   ENVIAR PEDIDO A WHATSAPP
+================================================== */
+
+function enviarPedidoWhatsApp() {
+
+    const nombre =
+        document
+            .getElementById("nombreCliente")
+            .value
+            .trim();
+
+    const correo =
+        document
+            .getElementById("correoCliente")
+            .value
+            .trim();
+
+    const fecha =
+        document
+            .getElementById("fechaPedido")
+            .value
+            .trim();
+
+    const error =
+        document
+            .getElementById("errorFormulario");
+
+    error.textContent = "";
+
+
+    /* ==================================================
+       VALIDAR NOMBRE
+    ================================================== */
+
+    if (nombre === "") {
+
+        error.textContent =
+            "💕 Por favor escribe tu nombre completo.";
+
+        document
+            .getElementById("nombreCliente")
+            .focus();
+
+        return;
+    }
+
+
+    if (nombre.length < 3) {
+
+        error.textContent =
+            "👤 Escribe tu nombre completo.";
+
+        document
+            .getElementById("nombreCliente")
+            .focus();
+
+        return;
+    }
+
+
+    /* ==================================================
+       VALIDAR CORREO
+    ================================================== */
+
+    if (correo === "") {
+
+        error.textContent =
+            "💕 Por favor escribe tu correo electrónico.";
+
+        document
+            .getElementById("correoCliente")
+            .focus();
+
+        return;
+    }
+
+
+    const formatoCorreo =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!formatoCorreo.test(correo)) {
+
+        error.textContent =
+            "📧 Escribe un correo electrónico válido.";
+
+        document
+            .getElementById("correoCliente")
+            .focus();
+
+        return;
+    }
+
+
+    /* ==================================================
+       VALIDAR FECHA
+    ================================================== */
+
+    if (fecha === "") {
+
+        error.textContent =
+            "📅 Por favor selecciona la fecha para tu pedido.";
+
+        document
+            .getElementById("fechaPedido")
+            .focus();
+
+        return;
+    }
+
+
+    /* ==================================================
+       FORMATEAR FECHA
+    ================================================== */
+
+    const fechaSeleccionada =
+        new Date(fecha + "T00:00:00");
+
+    const fechaFormateada =
+        fechaSeleccionada.toLocaleDateString(
+            "es-CO",
+            {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            }
+        );
+
+
+    /* ==================================================
+       CREAR MENSAJE
+    ================================================== */
+
+    let mensaje =
+        "💝 *PEDIDO - DOLCE VITA ANCHETAS* ❤️\n\n";
+
+
+    let total = 0;
+
+
+    carrito.forEach(producto => {
+
+        const subtotal =
+            producto.precio *
+            producto.cantidad;
+
+        total += subtotal;
+
+
+        mensaje +=
+            "🎁 *" +
+            producto.nombre +
+            "*\n";
+
+        mensaje +=
+            "🔢 Cantidad: " +
+            producto.cantidad +
+            "\n";
+
+        mensaje +=
+            "💰 Precio: " +
+            formatearPrecio(producto.precio) +
+            "\n\n";
+
+    });
+
+
+    /* ==================================================
+       TOTAL
+    ================================================== */
+
+    mensaje +=
+        "━━━━━━━━━━━━━━━━━━\n";
+
+    mensaje +=
+        "💗 *TOTAL DEL PEDIDO: " +
+        formatearPrecio(total) +
+        "*\n";
+
+    mensaje +=
+        "━━━━━━━━━━━━━━━━━━\n\n";
+
+
+    /* ==================================================
+       DATOS DEL CLIENTE
+    ================================================== */
+
+    mensaje +=
+        "👤 *Nombre completo:*\n" +
+        nombre +
+        "\n\n";
+
+    mensaje +=
+        "📧 *Correo electrónico:*\n" +
+        correo +
+        "\n\n";
+
+    mensaje +=
+        "📅 *Fecha para el pedido:*\n" +
+        fechaFormateada +
+        "\n\n";
+
+
+    /* ==================================================
+       MENSAJE FINAL
+    ================================================== */
+
+    mensaje +=
+        "💐 Hola Dolce Vita Anchetas 💕\n";
+
+    mensaje +=
+        "✨ Quiero confirmar mi pedido.\n";
+
+    mensaje +=
+        "🎀 Muchas gracias. ❤️";
+
+
+    /* ==================================================
+       WHATSAPP
+    ================================================== */
+
+    const numeroDolceVita =
+        "573207036848";
+
+
+    const url =
+        "https://wa.me/" +
+        numeroDolceVita +
+        "?text=" +
+        encodeURIComponent(mensaje);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    cerrarFormularioPedido();
+}
+
+
+
+/* ==================================================
+   INICIAR
+================================================== */
+
+actualizarCarrito();
+
+</script>
+
+
+</body>
+
+</html>

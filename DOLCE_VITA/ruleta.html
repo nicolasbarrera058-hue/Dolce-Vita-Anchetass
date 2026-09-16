@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ruleta de Regalos | Dolce Vita Anchetas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffd6e5, transparent 30%),
+                radial-gradient(circle at bottom right, #ffc1d8, transparent 30%),
+                #fff0f5;
+            color: #5c2341;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .barra {
+            width: 100%;
+            height: 105px;
+            background: linear-gradient(90deg, #e91e63, #ec407a, #e91e63);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            box-shadow: 0 5px 20px rgba(233, 30, 99, .3);
+        }
+
+        .logo {
+            position: absolute;
+            left: 25px;
+            width: 75px;
+            height: 75px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .titulo {
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-size: 52px;
+            text-align: center;
+            text-shadow: 0 3px 10px rgba(0,0,0,.15);
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-btn {
+            position: absolute;
+            right: 30px;
+            width: 40px;
+            cursor: pointer;
+            z-index: 10002;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 38px;
+            height: 4px;
+            background: white;
+            margin: 7px 0;
+            border-radius: 10px;
+        }
+
+        .menu {
+            position: fixed;
+            top: 105px;
+            right: -320px;
+            width: 320px;
+            height: calc(100vh - 105px);
+            background: white;
+            z-index: 10001;
+            box-shadow: -10px 0 30px rgba(233,30,99,.2);
+            transition: right .35s ease;
+            padding-top: 15px;
+            overflow-y: auto;
+        }
+
+        .menu.activo {
+            right: 0;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: #7b294f;
+            font-weight: 500;
+            border-bottom: 1px solid #ffe0eb;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            background: #fff0f5;
+            padding-left: 32px;
+            color: #e91e63;
+        }
+
+        /* =========================
+           REDES
+        ========================= */
+
+        .redes-fijas {
+            position: fixed;
+            left: 15px;
+            top: 125px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9998;
+        }
+
+        .red-social {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 23px;
+            box-shadow: 0 5px 18px rgba(233,30,99,.25);
+            transition: .3s;
+        }
+
+        .red-social:hover {
+            transform: scale(1.15) translateX(5px);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 145px 20px 40px;
+            text-align: center;
+        }
+
+        .mini-titulo {
+            color: #e91e63;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 65px;
+            color: #d81b60;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           MOTIVOS
+        ========================= */
+
+        .motivos {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .motivos h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #d81b60;
+            margin-bottom: 20px;
+        }
+
+        .botones-motivos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .motivo {
+            border: 2px solid #f48fb1;
+            background: white;
+            color: #a52c59;
+            padding: 12px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Poppins';
+            font-weight: 600;
+            transition: .3s;
+            box-shadow: 0 5px 15px rgba(233,30,99,.08);
+        }
+
+        .motivo:hover,
+        .motivo.seleccionado {
+            background: linear-gradient(135deg,#e91e63,#ec407a);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233,30,99,.25);
+        }
+
+        /* =========================
+           RULETA
+        ========================= */
+
+        .zona-ruleta {
+            max-width: 1150px;
+            margin: 0 auto 80px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+
+        .ruleta-contenedor {
+            position: relative;
+            width: 430px;
+            height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ruleta {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 12px solid white;
+            box-shadow:
+                0 15px 40px rgba(150,30,80,.25),
+                0 0 0 8px #f8a7c1;
+            background: conic-gradient(
+                #f48fb1 0deg 60deg,
+                #f06292 60deg 120deg,
+                #ec407a 120deg 180deg,
+                #e91e63 180deg 240deg,
+                #d81b60 240deg 300deg,
+                #ad1457 300deg 360deg
+            );
+            transition: transform 5s cubic-bezier(.12,.8,.18,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ruleta-textos {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .ruleta-texto {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            text-align: center;
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            text-shadow: 0 2px 5px rgba(0,0,0,.35);
+            transform-origin: center;
+        }
+
+        .texto1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-145px) rotate(-30deg); }
+        .texto2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-145px) rotate(-90deg); }
+        .texto3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-145px) rotate(-150deg); }
+        .texto4 { transform: translate(-50%, -50%) rotate(210deg) translateY(-145px) rotate(-210deg); }
+        .texto5 { transform: translate(-50%, -50%) rotate(270deg) translateY(-145px) rotate(-270deg); }
+        .texto6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-145px) rotate(-330deg); }
+
+        .puntero {
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 45px solid #8e1747;
+            z-index: 10;
+            filter: drop-shadow(0 4px 5px rgba(0,0,0,.25));
+        }
+
+        .centro-ruleta {
+            position: absolute;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: white;
+            border: 8px solid #f8a7c1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.2);
+            z-index: 5;
+        }
+
+        /* =========================
+           PANEL LATERAL
+        ========================= */
+
+        .panel-ruleta {
+            width: 400px;
+            background: rgba(255,255,255,.9);
+            border-radius: 30px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(150,30,80,.15);
+            text-align: center;
+            border: 2px solid #ffd0df;
+        }
+
+        .panel-ruleta h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #d81b60;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .panel-ruleta p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .motivo-actual {
+            background: #fff0f5;
+            padding: 12px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: #d81b60;
+            font-weight: 700;
+        }
+
+        .boton-girar {
+            width: 100%;
+            border: none;
+            padding: 17px;
+            border-radius: 35px;
+            background: linear-gradient(135deg,#e91e63,#ad1457);
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins';
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(233,30,99,.3);
+            transition: .3s;
+        }
+
+        .boton-girar:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .boton-girar:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        /* =========================
+           RESULTADO
+        ========================= */
+
+        .resultado {
+            display: none;
+            max-width: 850px;
+            margin: -30px auto 80px;
+            padding: 20px;
+        }
+
+        .resultado.activo {
+            display: block;
+            animation: aparecer .6s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .resultado-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 25px;
+            box-shadow: 0 15px 45px rgba(150,30,80,.18);
+            border: 3px solid #f8a7c1;
+        }
+
+        .resultado-imagen {
+            width: 280px;
+            height: 280px;
+            flex-shrink: 0;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #ffe1ec;
+        }
+
+        .resultado-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .resultado-info {
+            flex: 1;
+        }
+
+        .ganaste {
+            color: #e91e63;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .resultado-info h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #ad1457;
+            font-size: 45px;
+            margin: 8px 0;
+        }
+
+        .precio {
+            color: #e91e63;
+            font-size: 25px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .descripcion {
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .botones-resultado {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .boton-catalogo,
+        .boton-whatsapp {
+            text-decoration: none;
+            border-radius: 25px;
+            padding: 12px 18px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .boton-catalogo {
+            background: #fff0f5;
+            color: #d81b60;
+            border: 2px solid #f48fb1;
+        }
+
+        .boton-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .boton-catalogo:hover,
+        .boton-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           DECORACIÓN
+        ========================= */
+
+        .decoracion {
+            position: fixed;
+            pointer-events: none;
+            color: #f48fb1;
+            opacity: .45;
+            font-size: 28px;
+            z-index: 0;
+        }
+
+        .d1 {
+            top: 25%;
+            right: 5%;
+        }
+
+        .d2 {
+            top: 60%;
+            left: 7%;
+        }
+
+        .d3 {
+            bottom: 8%;
+            right: 15%;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: linear-gradient(135deg,#d81b60,#ec407a);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+        }
+
+        footer p {
+            margin-top: 8px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .zona-ruleta {
+                gap: 40px;
+            }
+
+            .resultado-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .resultado-imagen {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .botones-resultado {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .barra {
+                height: 78px;
+            }
+
+            body {
+                padding-top: 78px;
+            }
+
+            .logo {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 52px;
+                height: 52px;
+            }
+
+            .titulo {
+                position: absolute;
+                left: 70px;
+                right: 65px;
+                font-size: 29px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .menu-btn {
+                position: fixed;
+                top: 21px;
+                right: 14px;
+                width: 34px;
+            }
+
+            .menu-btn span {
+                width: 34px;
+                height: 4px;
+                margin: 6px 0;
+            }
+
+            .menu {
+                top: 78px;
+                width: 280px;
+                height: calc(100vh - 78px);
+            }
+
+            .redes-fijas {
+                left: 8px;
+                top: 95px;
+                gap: 8px;
+            }
+
+            .red-social {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .ruleta-contenedor {
+                width: 320px;
+                height: 320px;
+            }
+
+            .ruleta {
+                width: 290px;
+                height: 290px;
+                border-width: 8px;
+            }
+
+            .ruleta-texto {
+                width: 110px;
+                font-size: 10px;
+            }
+
+            .texto1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-105px) rotate(-30deg); }
+            .texto2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-105px) rotate(-90deg); }
+            .texto3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-105px) rotate(-150deg); }
+            .texto4 { transform: translate(-50%, -50%) rotate(210deg) translateY(-105px) rotate(-210deg); }
+            .texto5 { transform: translate(-50%, -50%) rotate(270deg) translateY(-105px) rotate(-270deg); }
+            .texto6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-105px) rotate(-330deg); }
+
+            .centro-ruleta {
+                width: 65px;
+                height: 65px;
+                font-size: 23px;
+                border-width: 6px;
+            }
+
+            .panel-ruleta {
+                width: 100%;
+                max-width: 400px;
+                padding: 25px 18px;
+            }
+
+            .panel-ruleta h2 {
+                font-size: 36px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="barra">
+
+        <div class="logo">
+            <img src="imágenes/logo.jpeg" alt="Dolce Vita Anchetas">
+        </div>
+
+        <div class="titulo">
+            Dolce Vita Anchetas
+        </div>
+
+        <div class="menu-btn" onclick="abrirMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <nav class="menu" id="menu">
+
+        <a href="index.html">
+            🏠 Inicio
+        </a>
+
+        <a href="CATALOGO/catalogo.html">
+            🎁 Anchetas
+        </a>
+
+        <a href="CATALOGO/catalogo.html">
+            🌷 Flores
+        </a>
+
+        <a href="CATALOGO/catalogo.html">
+            🎀 Regalos personalizados
+        </a>
+
+        <a href="ruleta.html">
+            🎡 Ruleta de regalos
+        </a>
+
+        <a href="calendario.html">
+            📅 Calendario
+        </a>
+
+        <a href="creadora.html">
+            👑 La creadora
+        </a>
+
+    </nav>
+
+    <!-- =========================
+         REDES
+    ========================= -->
+
+    <div class="redes-fijas">
+
+        <a class="red-social" href="https://wa.me/573207036848" target="_blank">
+            💬
+        </a>
+
+        <a class="red-social" href="https://www.instagram.com/dolcevitanchetas/" target="_blank">
+            📸
+        </a>
+
+        <a class="red-social" href="#">
+            f
+        </a>
+
+        <a class="red-social" href="#">
+            ♪
+        </a>
+
+    </div>
+
+    <!-- DECORACIONES -->
+
+    <div class="decoracion d1">♡</div>
+    <div class="decoracion d2">✦</div>
+    <div class="decoracion d3">♡</div>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="mini-titulo">
+            ✦ ENCUENTRA EL REGALO PERFECTO ✦
+        </div>
+
+        <h1>
+            Ruleta de Regalos 🎁
+        </h1>
+
+        <p>
+            ¿No sabes qué regalar?
+            Elige el motivo de tu regalo y deja que
+            <strong>Dolce Vita Anchetas</strong> te sorprenda.
+            💕
+        </p>
+
+    </section>
+
+    <!-- =========================
+         MOTIVOS
+    ========================= -->
+
+    <section class="motivos">
+
+        <h2>
+            ¿Para quién es tu regalo? 💕
+        </h2>
+
+        <div class="botones-motivos">
+
+            <button class="motivo" onclick="seleccionarMotivo('cumpleanos', this)">
+                🎂 Cumpleaños
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('amor', this)">
+                ❤️ Amor
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('aniversario', this)">
+                💍 Aniversario
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('amistad', this)">
+                🫶 Amistad
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('mama', this)">
+                🌷 Para mamá
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('papa', this)">
+                👔 Para papá
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('graduacion', this)">
+                🎓 Graduación
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('agradecimiento', this)">
+                💐 Agradecimiento
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('sorpresa', this)">
+                🎁 Porque sí
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('celebracion', this)">
+                🎉 Celebración
+            </button>
+
+            <button class="motivo" onclick="seleccionarMotivo('todos', this)">
+                ✨ Sorpréndeme
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         RULETA
+    ========================= -->
+
+    <section class="zona-ruleta">
+
+        <div class="ruleta-contenedor">
+
+            <div class="puntero"></div>
+
+            <div class="ruleta" id="ruleta">
+
+                <div class="ruleta-textos">
+
+                    <div class="ruleta-texto texto1">
+                        🎁 Desayuno
+                    </div>
+
+                    <div class="ruleta-texto texto2">
+                        💕 Ancheta
+                    </div>
+
+                    <div class="ruleta-texto texto3">
+                        🌷 Flores
+                    </div>
+
+                    <div class="ruleta-texto texto4">
+                        🎀 Personalizado
+                    </div>
+
+                    <div class="ruleta-texto texto5">
+                        🍫 Dulces
+                    </div>
+
+                    <div class="ruleta-texto texto6">
+                        ✨ Sorpresa
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="centro-ruleta">
+                💝
+            </div>
+
+        </div>
+
+        <div class="panel-ruleta">
+
+            <h2>
+                ¡Gira y descubre!
+            </h2>
+
+            <p>
+                Primero selecciona el motivo de tu regalo.
+                Después presiona el botón y deja que la suerte
+                elija por ti. ✨
+            </p>
+
+            <div class="motivo-actual" id="motivoActual">
+                ✨ Selecciona un motivo
+            </div>
+
+            <button class="boton-girar" id="botonGirar" onclick="girarRuleta()">
+                🎡 GIRAR LA RULETA
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         RESULTADO
+    ========================= -->
+
+    <section class="resultado" id="resultado">
+
+        <div class="resultado-card">
+
+            <div class="resultado-imagen">
+
+                <img
+                    id="imagenResultado"
+                    src="imágenes/Ancheta.jpeg"
+                    alt="Regalo recomendado"
+                >
+
+            </div>
+
+            <div class="resultado-info">
+
+                <div class="ganaste">
+                    ✦ ¡LA RULETA HA ELEGIDO! ✦
+                </div>
+
+                <h2 id="nombreResultado">
+                    Tu regalo perfecto
+                </h2>
+
+                <div class="precio" id="precioResultado">
+                    $0
+                </div>
+
+                <p class="descripcion" id="descripcionResultado">
+                    Aquí aparecerá la descripción del regalo.
+                </p>
+
+                <div class="botones-resultado">
+
+                    <a
+                        href="CATALOGO/catalogo.html"
+                        class="boton-catalogo"
+                    >
+                        🎁 Ver catálogo
+                    </a>
+
+                    <a
+                        id="whatsappResultado"
+                        href="#"
+                        target="_blank"
+                        class="boton-whatsapp"
+                    >
+                        💬 Preguntar por WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h2>
+            Dolce Vita Anchetas 💕
+        </h2>
+
+        <p>
+            Cada detalle sabe mejor cuando se prepara con amor.
+        </p>
+
+        <p>
+            📍 Aranjuez, Medellín
+        </p>
+
+        <p>
+            📱 320 703 6848
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           MENÚ
+        ========================= */
+
+        function abrirMenu() {
+
+            document
+                .getElementById("menu")
+                .classList.toggle("activo");
+
+        }
+
+
+        /* =========================
+           PRODUCTOS DEL CATÁLOGO
+        ========================= */
+
+        const productos = [
+
+            {
+                nombre: "Desayuno Sorpresa Especial",
+                precio: 85000,
+                imagen: "imágenes/Desayuno3.jpeg",
+                categorias: [
+                    "cumpleanos",
+                    "amor",
+                    "aniversario",
+                    "mama",
+                    "papa",
+                    "amistad",
+                    "celebracion",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Desayuno especial con caja con mensaje, tarjeta personalizada, waffles, ensalada de frutas, jugo de naranja, bombones, galletas, chocolatina Jet, decoración romántica y cubiertos."
+            },
+
+            {
+                nombre: "Ancheta Especial",
+                precio: 115000,
+                imagen: "imágenes/ancheta.p.PNG",
+                categorias: [
+                    "cumpleanos",
+                    "amor",
+                    "aniversario",
+                    "amistad",
+                    "mama",
+                    "papa",
+                    "celebracion",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Hermosa ancheta en caja de madera con decoración, peluche mediano personalizado, golosinas, maní especial, Oreo, Trululu, papas naturales, globos y detalles personalizados."
+            },
+
+            {
+                nombre: "Desayuno con Frutas",
+                precio: 115000,
+                imagen: "imágenes/Ancheta4.jpeg",
+                categorias: [
+                    "cumpleanos",
+                    "amor",
+                    "aniversario",
+                    "mama",
+                    "amistad",
+                    "celebracion"
+                ],
+                descripcion:
+                    "Caja de madera con mensaje, yogurt, golosinas, ensalada de frutas, Milo, bombones de chocolate, croissant con queso, chocolatina Jet, decoración personalizada, cubiertos y aro de globos."
+            },
+
+            {
+                nombre: "Desayuno Romántico",
+                precio: 85000,
+                imagen: "imágenes/desayuno2.jpeg",
+                categorias: [
+                    "amor",
+                    "aniversario",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Canasta de madera con tarjeta personalizada, waffles con arequipe o salsa de fresa, Milo, jugo de naranja, bombones, galletas, maní y decoración romántica."
+            },
+
+            {
+                nombre: "Desayuno Clásico",
+                precio: 65000,
+                imagen: "imágenes/desayuno5.jpeg",
+                categorias: [
+                    "cumpleanos",
+                    "amor",
+                    "amistad",
+                    "mama",
+                    "papa",
+                    "sorpresa",
+                    "celebracion"
+                ],
+                descripcion:
+                    "Caja con mensaje bonito, waffles con Nutella o salsa de fresa, jugo de naranja, bombones de chocolate, marshmallows, chocolatina Gol, maní, decoración romántica y cubiertos."
+            },
+
+            {
+                nombre: "Desayuno Sencillo",
+                precio: 55000,
+                imagen: "imágenes/desayuno1.jpeg",
+                categorias: [
+                    "cumpleanos",
+                    "amor",
+                    "amistad",
+                    "mama",
+                    "papa",
+                    "agradecimiento",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Caja con mensaje bonito, waffles con arequipe o salsa de fresas, jugo de naranja, ensalada de frutas, decoración romántica y cubiertos."
+            },
+
+            {
+                nombre: "Detalle Línea Premium",
+                precio: 100000,
+                imagen: "imágenes/vino.jpeg",
+                categorias: [
+                    "mama",
+                    "amor",
+                    "aniversario",
+                    "agradecimiento",
+                    "celebracion"
+                ],
+                descripcion:
+                    "Detalle premium con caja con mensaje, elementos especiales, Ferrero Rocher, fresas, fotografía en papel fotográfico, mensaje personalizado y arequipe mini."
+            },
+
+            {
+                nombre: "Regalo Personalizado con Lámpara",
+                precio: 64000,
+                imagen: "imágenes/letra2.PNG",
+                categorias: [
+                    "amor",
+                    "cumpleanos",
+                    "aniversario",
+                    "amistad",
+                    "mama",
+                    "papa",
+                    "graduacion",
+                    "agradecimiento",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Lámpara de la inicial que elijas, pilas, caja bonita con mensaje, fotografía en papel fotográfico con mensaje personalizado y dos Mini Jet."
+            },
+
+            {
+                nombre: "Regalo Personalizado Premium",
+                precio: 90200,
+                imagen: "imágenes/letra.jpeg",
+                categorias: [
+                    "amor",
+                    "aniversario",
+                    "cumpleanos",
+                    "mama",
+                    "amistad",
+                    "agradecimiento"
+                ],
+                descripcion:
+                    "Lámpara de la inicial, pilas, caja con mensaje, fotografías en papel fotográfico, tres Ferrero Rocher, uvas, manzana y notica."
+            },
+
+            {
+                nombre: "Gran Regalo con Peluche",
+                precio: 230000,
+                imagen: "imágenes/peluche.jpeg",
+                categorias: [
+                    "amor",
+                    "aniversario",
+                    "cumpleanos",
+                    "celebracion"
+                ],
+                descripcion:
+                    "Peluche grande, dos globos con helio, globo con mensaje y tarjeta personalizada en papel fotográfico a color con mensaje y fotos."
+            },
+
+            {
+                nombre: "Regalo Personalizado",
+                precio: 85000,
+                imagen: "imágenes/Desayuno_especial.jpeg",
+                categorias: [
+                    "amor",
+                    "cumpleanos",
+                    "aniversario",
+                    "mama",
+                    "papa",
+                    "amistad",
+                    "celebracion",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Regalo completamente personalizado para hombre o mujer. El precio puede variar según lo que quieras preparar para tu persona favorita."
+            },
+
+            {
+                nombre: "Ancheta de Cumpleaños",
+                precio: 124000,
+                imagen: "imágenes/Ancheta.jpeg",
+                categorias: [
+                    "cumpleanos",
+                    "celebracion",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Base de madera decorada, globos, arco de madera con mensaje de cumpleaños o aniversario, globo de corazón, dulces, gomitas, chocolates, galletas y decoración."
+            },
+
+            {
+                nombre: "Cartelera Personalizada",
+                precio: 45000,
+                imagen: "imágenes/cartelera.PNG",
+                categorias: [
+                    "amor",
+                    "cumpleanos",
+                    "aniversario",
+                    "amistad",
+                    "graduacion",
+                    "agradecimiento",
+                    "mama",
+                    "papa",
+                    "sorpresa"
+                ],
+                descripcion:
+                    "Cartelera grande con fotografías a color, bonita caligrafía y mensaje personalizado con el largo que quieras. Tú eliges el diseño."
+            }
+
+        ];
+
+
+        /* =========================
+           ESTADO
+        ========================= */
+
+        let motivoSeleccionado = "todos";
+
+        let girando = false;
+
+        let vueltas = 0;
+
+
+        /* =========================
+           SELECCIONAR MOTIVO
+        ========================= */
+
+        function seleccionarMotivo(motivo, boton) {
+
+            motivoSeleccionado = motivo;
+
+            document
+                .querySelectorAll(".motivo")
+                .forEach(b => b.classList.remove("seleccionado"));
+
+            boton.classList.add("seleccionado");
+
+            const nombres = {
+
+                cumpleanos: "🎂 Cumpleaños",
+
+                amor: "❤️ Amor",
+
+                aniversario: "💍 Aniversario",
+
+                amistad: "🫶 Amistad",
+
+                mama: "🌷 Para mamá",
+
+                papa: "👔 Para papá",
+
+                graduacion: "🎓 Graduación",
+
+                agradecimiento: "💐 Agradecimiento",
+
+                sorpresa: "🎁 Porque sí",
+
+                celebracion: "🎉 Celebración",
+
+                todos: "✨ Cualquier ocasión"
+
+            };
+
+            document.getElementById("motivoActual").textContent =
+                nombres[motivo];
+
+            document
+                .getElementById("resultado")
+                .classList.remove("activo");
+
+        }
+
+
+        /* =========================
+           FORMATEAR PRECIO
+        ========================= */
+
+        function formatearPrecio(precio) {
+
+            return new Intl.NumberFormat("es-CO", {
+
+                style: "currency",
+
+                currency: "COP",
+
+                maximumFractionDigits: 0
+
+            }).format(precio);
+
+        }
+
+
+        /* =========================
+           GIRAR RULETA
+        ========================= */
+
+        function girarRuleta() {
+
+            if (girando) return;
+
+            girando = true;
+
+            const boton =
+                document.getElementById("botonGirar");
+
+            boton.disabled = true;
+
+            boton.textContent = "🎡 GIRANDO...";
+
+            /* PRODUCTOS SEGÚN MOTIVO */
+
+            let disponibles;
+
+            if (motivoSeleccionado === "todos") {
+
+                disponibles = [...productos];
+
+            } else {
+
+                disponibles = productos.filter(producto =>
+                    producto.categorias.includes(motivoSeleccionado)
+                );
+
+            }
+
+            /* SEGURIDAD */
+
+            if (disponibles.length === 0) {
+
+                disponibles = [...productos];
+
+            }
+
+            /* ELEGIR PRODUCTO */
+
+            const ganador =
+                disponibles[
+                    Math.floor(Math.random() * disponibles.length)
+                ];
+
+            /* ANIMACIÓN */
+
+            vueltas += 5 + Math.floor(Math.random() * 4);
+
+            const grados =
+                vueltas * 360 +
+                Math.floor(Math.random() * 360);
+
+            document
+                .getElementById("ruleta")
+                .style.transform =
+                `rotate(${grados}deg)`;
+
+
+            /* MOSTRAR RESULTADO */
+
+            setTimeout(() => {
+
+                mostrarResultado(ganador);
+
+                girando = false;
+
+                boton.disabled = false;
+
+                boton.textContent =
+                    "🎡 GIRAR OTRA VEZ";
+
+            }, 5200);
+
+        }
+
+
+        /* =========================
+           MOSTRAR RESULTADO
+        ========================= */
+
+        function mostrarResultado(producto) {
+
+            document
+                .getElementById("imagenResultado")
+                .src = producto.imagen;
+
+            document
+                .getElementById("imagenResultado")
+                .alt = producto.nombre;
+
+            document
+                .getElementById("nombreResultado")
+                .textContent = producto.nombre;
+
+            document
+                .getElementById("precioResultado")
+                .textContent =
+                formatearPrecio(producto.precio);
+
+            document
+                .getElementById("descripcionResultado")
+                .textContent =
+                producto.descripcion;
+
+
+            /* WHATSAPP */
+
+            const mensaje =
+                `Hola Dolce Vita Anchetas 💕%0A%0A` +
+                `Me interesa el producto:%0A` +
+                `${producto.nombre}%0A` +
+                `Precio: ${formatearPrecio(producto.precio)}%0A%0A` +
+                `Quisiera recibir más información. 🎁`;
+
+            document
+                .getElementById("whatsappResultado")
+                .href =
+                `https://wa.me/573207036848?text=${mensaje}`;
+
+
+            /* MOSTRAR */
+
+            const resultado =
+                document.getElementById("resultado");
+
+            resultado.classList.add("activo");
+
+            setTimeout(() => {
+
+                resultado.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 200);
+
+        }
+
+
+    </script>
+
+</body>
+</html>

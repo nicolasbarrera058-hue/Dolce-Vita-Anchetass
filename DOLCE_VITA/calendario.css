@@ -1,0 +1,894 @@
+  /* =========================================
+           GENERAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 105px;
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,.8), transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255,182,213,.35), transparent 30%),
+                #fff0f5;
+            color: #5c2341;
+        }
+
+
+        /* =========================================
+           BARRA SUPERIOR
+        ========================================= */
+
+        .barra {
+            width: 100%;
+            height: 105px;
+
+            background: linear-gradient(
+                90deg,
+                #e91e63,
+                #ec407a,
+                #f06292,
+                #ec407a,
+                #e91e63
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 99999;
+
+            box-shadow:
+                0 5px 25px rgba(233, 30, 99, .35);
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            position: absolute;
+            left: 25px;
+
+            width: 72px;
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 72px;
+            height: 72px;
+
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+
+        /* TITULO */
+
+        .titulo {
+            color: white;
+
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 52px;
+            font-weight: 500;
+
+            text-shadow:
+                0 2px 5px rgba(0,0,0,.15);
+
+            text-align: center;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           MENU
+        ========================================= */
+
+        .menu-btn {
+            position: absolute;
+
+            right: 30px;
+
+            width: 42px;
+            height: 42px;
+
+            cursor: pointer;
+
+            z-index: 100002;
+        }
+
+        .menu-btn span {
+            display: block;
+
+            width: 42px;
+            height: 5px;
+
+            margin: 7px 0;
+
+            background: white;
+
+            border-radius: 20px;
+        }
+
+        .menu {
+            position: fixed;
+
+            top: 105px;
+            right: -310px;
+
+            width: 300px;
+            height: calc(100vh - 105px);
+
+            background: white;
+
+            z-index: 100001;
+
+            padding-top: 20px;
+
+            box-shadow:
+                -10px 0 35px rgba(233,30,99,.20);
+
+            transition: right .35s ease;
+
+            overflow-y: auto;
+        }
+
+        .menu.activo {
+            right: 0;
+        }
+
+        .menu a {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 19px 25px;
+
+            text-decoration: none;
+
+            color: #7a294d;
+
+            font-size: 17px;
+
+            border-bottom: 1px solid #ffe1eb;
+
+            transition: .25s;
+        }
+
+        .menu a:hover {
+            background: #fff0f5;
+
+            color: #e91e63;
+
+            padding-left: 32px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero-calendario {
+            position: relative;
+
+            max-width: 1200px;
+
+            margin: 40px auto 25px;
+
+            padding: 60px 25px;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.96),
+                    rgba(255,225,236,.95)
+                );
+
+            border: 2px solid #ffc1d6;
+
+            box-shadow:
+                0 15px 45px rgba(233,30,99,.15);
+        }
+
+        .hero-calendario::before {
+            content: "♡";
+
+            position: absolute;
+
+            left: 25px;
+            top: 10px;
+
+            font-size: 100px;
+
+            color: rgba(233,30,99,.10);
+        }
+
+        .hero-calendario::after {
+            content: "✦";
+
+            position: absolute;
+
+            right: 40px;
+            bottom: 15px;
+
+            font-size: 70px;
+
+            color: rgba(233,30,99,.12);
+        }
+
+        .mini-titulo {
+            color: #e91e63;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .hero-calendario h1 {
+            margin: 10px 0;
+
+            font-family: 'Great Vibes', cursive;
+
+            font-size: clamp(50px, 8vw, 85px);
+
+            color: #d81b60;
+
+            line-height: 1.1;
+        }
+
+        .hero-calendario h1 span {
+            color: #ec407a;
+        }
+
+        .hero-calendario p {
+            max-width: 700px;
+
+            margin: 15px auto;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #795064;
+        }
+
+        .decoracion {
+            color: #e91e63;
+
+            font-size: 25px;
+
+            letter-spacing: 12px;
+        }
+
+
+        /* =========================================
+           FILTROS
+        ========================================= */
+
+        .filtros {
+            max-width: 1200px;
+
+            margin: 25px auto;
+
+            padding: 0 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .filtro {
+            border: 2px solid #f8a9c5;
+
+            background: white;
+
+            color: #d81b60;
+
+            border-radius: 30px;
+
+            padding: 10px 18px;
+
+            font-family: 'Poppins', sans-serif;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+        .filtro:hover,
+        .filtro.activo {
+            background: #e91e63;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 15px rgba(233,30,99,.25);
+        }
+
+
+        /* =========================================
+           CALENDARIO
+        ========================================= */
+
+        .calendario {
+            max-width: 1250px;
+
+            margin: 30px auto 80px;
+
+            padding: 0 20px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* MES */
+
+        .mes {
+            background: rgba(255,255,255,.95);
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            border: 2px solid #ffd1df;
+
+            box-shadow:
+                0 10px 30px rgba(233,30,99,.10);
+
+            transition: .3s;
+        }
+
+        .mes:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 40px rgba(233,30,99,.18);
+        }
+
+        .mes-header {
+            padding: 18px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #f06292
+                );
+
+            color: white;
+        }
+
+        .mes-header h2 {
+            margin: 0;
+
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 38px;
+
+            font-weight: 500;
+        }
+
+        .mes-header span {
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            opacity: .9;
+        }
+
+
+        /* FECHAS */
+
+        .fechas {
+            padding: 15px;
+        }
+
+        .fecha {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 8px;
+
+            border-bottom: 1px dashed #f4bfd1;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+        .fecha:last-child {
+            border-bottom: none;
+        }
+
+        .fecha:hover {
+            background: #fff0f5;
+
+            border-radius: 15px;
+
+            transform: translateX(4px);
+        }
+
+        .dia {
+            min-width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #ffe1ec;
+
+            color: #d81b60;
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+        .fecha-info {
+            flex: 1;
+        }
+
+        .fecha-info strong {
+            display: block;
+
+            color: #7a294d;
+
+            font-size: 14px;
+        }
+
+        .fecha-info small {
+            color: #a26b82;
+
+            font-size: 12px;
+        }
+
+        .icono-fecha {
+            font-size: 22px;
+        }
+
+
+        /* =========================================
+           FECHAS IMPORTANTES
+        ========================================= */
+
+        .fecha.especial .dia {
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #ff80ab
+                );
+
+            color: white;
+
+            box-shadow:
+                0 5px 12px rgba(233,30,99,.25);
+        }
+
+        .fecha.especial .fecha-info strong {
+            color: #e91e63;
+        }
+
+
+        /* =========================================
+           SECCION FINAL
+        ========================================= */
+
+        .recordatorio {
+            max-width: 1000px;
+
+            margin: 0 auto 70px;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff,
+                    #ffe5ef
+                );
+
+            border: 2px solid #ffc0d5;
+
+            box-shadow:
+                0 15px 40px rgba(233,30,99,.12);
+        }
+
+        .recordatorio h2 {
+            margin: 0 0 10px;
+
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 52px;
+
+            color: #d81b60;
+        }
+
+        .recordatorio p {
+            color: #795064;
+
+            font-size: 16px;
+        }
+
+        .boton-catalogo {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 15px;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e91e63,
+                    #ec407a
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 8px 20px rgba(233,30,99,.25);
+
+            transition: .3s;
+        }
+
+        .boton-catalogo:hover {
+            transform: translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 12px 28px rgba(233,30,99,.35);
+        }
+
+
+        /* =========================================
+           MODAL
+        ========================================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(67,20,42,.55);
+
+            backdrop-filter: blur(6px);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 200000;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(500px, 100%);
+
+            background: white;
+
+            border-radius: 30px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            position: relative;
+
+            border: 3px solid #ffc1d6;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.25);
+
+            animation: aparecer .3s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cerrar-modal {
+            position: absolute;
+
+            right: 15px;
+            top: 10px;
+
+            border: none;
+
+            background: #ffe4ed;
+
+            color: #d81b60;
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+        .modal-icono {
+            font-size: 55px;
+        }
+
+        .modal-contenido h2 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 48px;
+
+            color: #d81b60;
+
+            margin: 10px 0;
+        }
+
+        .modal-contenido p {
+            color: #795064;
+
+            line-height: 1.7;
+        }
+
+        .modal-regalo {
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #fff0f5;
+
+            border-radius: 18px;
+
+            color: #d81b60;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           CORAZONES DECORATIVOS
+        ========================================= */
+
+        .flotante {
+            position: fixed;
+
+            pointer-events: none;
+
+            color: rgba(233,30,99,.20);
+
+            font-size: 25px;
+
+            z-index: 0;
+
+            animation: flotar 6s infinite ease-in-out;
+        }
+
+        .f1 {
+            left: 4%;
+            top: 30%;
+        }
+
+        .f2 {
+            right: 5%;
+            top: 55%;
+
+            animation-delay: 2s;
+        }
+
+        .f3 {
+            left: 7%;
+            bottom: 15%;
+
+            animation-delay: 4s;
+        }
+
+        @keyframes flotar {
+            0%,100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+
+        /* =========================================
+           CELULARES
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .calendario {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-top: 78px;
+            }
+
+            .barra {
+                height: 78px;
+            }
+
+            .logo {
+                position: absolute;
+
+                left: 10px;
+                top: 50%;
+
+                transform: translateY(-50%);
+
+                width: 52px;
+                height: 52px;
+            }
+
+            .logo img {
+                width: 52px;
+                height: 52px;
+            }
+
+            .titulo {
+                position: absolute;
+
+                left: 68px;
+                right: 65px;
+
+                top: 50%;
+
+                transform: translateY(-50%);
+
+                font-size: 28px;
+
+                white-space: nowrap;
+
+                overflow: hidden;
+
+                text-align: center;
+            }
+
+            .menu-btn {
+                position: fixed;
+
+                top: 20px;
+                right: 14px;
+
+                width: 34px;
+                height: 38px;
+            }
+
+            .menu-btn span {
+                width: 34px;
+                height: 4px;
+
+                margin: 6px 0;
+            }
+
+            .menu {
+                top: 78px;
+
+                right: -280px;
+
+                width: 280px;
+
+                height: calc(100vh - 78px);
+            }
+
+            .menu.activo {
+                right: 0;
+            }
+
+            .hero-calendario {
+                margin: 20px 12px;
+
+                padding: 40px 18px;
+
+                border-radius: 25px;
+            }
+
+            .hero-calendario h1 {
+                font-size: 52px;
+            }
+
+            .hero-calendario p {
+                font-size: 15px;
+            }
+
+            .calendario {
+                grid-template-columns: 1fr;
+
+                padding: 0 14px;
+
+                gap: 20px;
+            }
+
+            .mes-header h2 {
+                font-size: 40px;
+            }
+
+            .recordatorio {
+                margin: 20px 14px 50px;
+
+                padding: 35px 20px;
+            }
+
+            .recordatorio h2 {
+                font-size: 42px;
+            }
+
+        }

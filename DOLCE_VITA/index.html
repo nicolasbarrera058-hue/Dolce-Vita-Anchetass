@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolce Vita Anchetas</title>
+</head>
+<!-- ==========================================
+     BOTÓN FLOTANTE DEL CARRITO
+     ========================================== -->
+
+<button class="boton-carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+
+    <span class="icono-carrito">🛍️</span>
+
+    <span class="contador-carrito" id="contadorCarrito">
+        0
+    </span>
+
+</button>
+
+
+<!-- ==========================================
+     FONDO OSCURO DEL CARRITO
+     ========================================== -->
+
+<div class="fondo-carrito"
+     id="fondoCarrito"
+     onclick="cerrarCarrito()">
+</div>
+
+
+<!-- ==========================================
+     PANEL DEL CARRITO
+     ========================================== -->
+
+<aside class="panel-carrito" id="panelCarrito">
+
+    <!-- ENCABEZADO -->
+
+    <div class="carrito-header">
+
+        <div>
+            <span class="carrito-corazon">♡</span>
+
+            <h2>Mi carrito</h2>
+
+            <p>Detalles preparados con amor 💕</p>
+        </div>
+
+        <button class="cerrar-carrito"
+                onclick="cerrarCarrito()">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- DECORACIÓN -->
+
+    <div class="carrito-linea">
+        <span>✦</span>
+        <i></i>
+        <span>♡</span>
+        <i></i>
+        <span>✦</span>
+    </div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div class="productos-carrito"
+         id="productosCarrito">
+
+        <!-- Aquí aparecerán los productos -->
+
+    </div>
+
+
+    <!-- CARRITO VACÍO -->
+
+    <div class="carrito-vacio"
+         id="carritoVacio">
+
+        <div class="carrito-vacio-icono">
+            🛍️
+        </div>
+
+        <h3>Tu carrito está vacío</h3>
+
+        <p>
+            Todavía no tienes detalles en tu carrito.
+            ¡Encuentra algo bonito para sorprender! 💕
+        </p>
+
+        <button onclick="cerrarCarrito()">
+            ✨ Explorar regalos
+        </button>
+
+    </div>
+
+
+    <!-- PARTE INFERIOR -->
+
+    <div class="carrito-footer"
+         id="carritoFooter">
+
+        <div class="subtotal">
+
+            <span>Subtotal</span>
+
+            <strong id="subtotalCarrito">
+                $0
+            </strong>
+
+        </div>
+
+        <p class="mensaje-envio">
+            ✨ El amor está a un clic de distancia
+        </p>
+
+        <button class="boton-finalizar"
+                onclick="finalizarCompra()">
+
+            <span>💝</span>
+            Finalizar pedido
+
+        </button>
+
+        <button class="seguir-comprando"
+                onclick="cerrarCarrito()">
+
+            ← Seguir comprando
+
+        </button>
+
+    </div>
+
+</aside>
+<body>
+   <!-- =========================
+         BARRA
+    ========================= -->
+
+    <header class="barra">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="imágenes/logo.jpeg" alt="Logo">
+        </div>
+
+
+        <!-- TITULO -->
+        <h1 class="titulo">
+            DOLCE VITA ANCHETAS
+        </h1>
+
+
+        <!-- MENU -->
+        <div class="menu-btn" onclick="abrirMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </header>
+
+
+  <!-- =========================
+     MENU LATERAL
+========================= -->
+
+<nav class="menu" id="menu">
+
+    <a href="index.html">
+        🏠 Inicio
+    </a>
+
+    <a href="CATALOGO/catalogo.html?categoria=anchetas">
+        🎁 Anchetas
+    </a>
+
+    <a href="CATALOGO/catalogo.html?categoria=regalos">
+        🎀 Regalos
+    </a>
+
+    <a href="CATALOGO/catalogo.html?categoria=flores">
+        🌷 Flores
+    </a>
+
+    <a href="CATALOGO/catalogo.html?categoria=todos">
+        🛍️ Productos
+    </a>
+
+    <a href="#contacto">
+        📞 Contacto
+    </a>
+
+    <a href="ruleta.html">
+        🎡 Ruleta de regalos
+    </a>
+
+    <a href="calendario.html">
+        📅 Calendario
+    </a>
+
+    <a href="creadora.html">
+        👑 La creadora
+    </a>
+
+</nav>
+
+<!-- SECCIÓN DE BIENVENIDA -->
+<section class="bienvenida">
+
+    <div class="corazon corazon-1">♡</div>
+    <div class="corazon corazon-2">♡</div>
+    <div class="corazon corazon-3">♡</div>
+
+    <div class="bienvenida-contenido">
+
+        <span class="decoracion">✦</span>
+
+        <h1>¡Bienvenidos a<br>
+            <span>Dolce Vita Anchetas</span>! 💕
+        </h1>
+
+        <div class="linea-decorativa">
+            <span>♡</span>
+            <i></i>
+            <span>♡</span>
+        </div>
+
+        <h2>
+            Donde todo sabe mejor con amor.
+        </h2>
+
+        <p>
+            Somos una marca que resalta tu amor hacia los demás
+            y la ternura de la vida todos los días.
+        </p>
+
+        <div class="mensaje-final">
+            ¡Desliza, enamórate &amp; personaliza tu regalo con nosotros! 💕
+        </div>
+
+    </div>
+
+</section>
+
+```html
+<!-- =========================================
+     SECCIÓN CONOCE A LA CREADORA
+========================================= -->
+
+<section class="seccion-creadora">
+
+    <!-- Decoraciones -->
+    <div class="creadora-corazon c1">♡</div>
+    <div class="creadora-corazon c2">♡</div>
+    <div class="creadora-brillo b1">✦</div>
+    <div class="creadora-brillo b2">✧</div>
+
+    <div class="creadora-contenido">
+
+        <!-- FOTO -->
+        <div class="creadora-foto">
+
+            <div class="circulo-decorativo"></div>
+
+            <!-- Pon aquí la foto de Stefanni -->
+            <img
+                src="stefanni1.jpeg"
+                alt="Stefanni Daniela Rivero Flores"
+            >
+
+            <div class="etiqueta-creadora">
+                ✨ Nuestra creadora
+            </div>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+        <div class="creadora-info">
+
+            <span class="creadora-mini">
+                ✦ CONOCE A NUESTRA CREADORA ✦
+            </span>
+
+            <h2>
+                El corazón detrás de
+                <span>Dolce Vita Anchetas</span>
+            </h2>
+
+            <div class="linea-creadora">
+                ♡ ───────── ♡
+            </div>
+
+            <h3>
+                Stefanni Daniela Rivero Flores
+            </h3>
+
+            <p>
+                Detrás de cada detalle, cada regalo y cada
+                momento especial existe una persona que pone
+                creatividad, dedicación y mucho amor en lo que hace.
+            </p>
+
+            <p>
+                <strong>Stefanni Daniela Rivero Flores</strong>
+                es la creadora y el corazón de
+                <strong>Dolce Vita Anchetas</strong>, una marca
+                pensada para convertir pequeños detalles en
+                recuerdos inolvidables.
+            </p>
+
+            <p class="frase-creadora">
+                “Cada detalle comienza con una idea,
+                pero cobra vida cuando se hace con amor.” 💕
+            </p>
+
+            <!-- BOTÓN -->
+            <a href="creadora.html" class="boton-creadora">
+                <span>💕</span>
+                Conocer a la creadora
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
+
+
+    <!-- =========================
+         BUSCADOR
+    ========================= -->
+
+    <section class="buscador-container">
+
+        <div class="buscador">
+
+            <span class="icono-buscar">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="buscar"
+                placeholder="Buscar productos..."
+                onkeyup="buscarProducto()"
+            >
+
+            <button class="boton-buscar">
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+<!-- REDES SOCIALES -->
+<div class="redes-fijas">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/message/YZ6GCUJ743LTK1" class="red-social whatsapp" title="WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7c1.7.9 3.5 1.3 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3zM12.1 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.9 1 1-3.8-.2-.3c-1-1.5-1.5-3.3-1.5-5.1C2.4 6.5 6.7 2.2 12.1 2.2c2.6 0 5.1 1 6.9 2.8 1.8 1.8 2.8 4.3 2.8 6.9 0 5.3-4.4 9.6-9.7 9.6z"/>
+            <path d="M17.6 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.1 3.1c.1.2 2 3.1 4.8 4.3 1.8.8 2.5.9 3.4.8.5-.1 1.8-.7 2-1.3.3-.6.3-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/>
+        </svg>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/share/1JsuvxFpWz/?mibextid=wwXIfr" class="red-social facebook" title="Facebook">
+        <svg viewBox="0 0 24 24">
+            <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.7.3-1 1-1z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/dolcevitanchetas?stkn=MXhvbGJ0OHhrZTB6MQ%3D%3D&utm_source=qr" class="red-social instagram" title="Instagram">
+        <svg viewBox="0 0 24 24">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.5 6.5A1 1 0 1 1 16.5 7.5a1 1 0 0 1 1-1z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@dolcevitanchetas?_r=1&_t=ZS-99bFPPbR7OH" class="red-social tiktok" title="TikTok">
+        <svg viewBox="0 0 24 24">
+            <path d="M19.6 7.2c-1.4-.3-2.5-1.2-3.1-2.5-.3-.6-.4-1.3-.4-2h-4v13.8c0 1.6-1.1 2.7-2.5 2.7-1.4 0-2.5-1.1-2.5-2.5 0-1.5 1.2-2.6 2.8-2.6.3 0 .7.1 1 .2v-4.1c-.3 0-.7-.1-1-.1-3.8 0-6.9 3-6.9 6.7S6.1 23.5 9.9 23.5s6.5-2.9 6.5-6.6V10c1.2.9 2.7 1.4 4.2 1.4V7.3c-.3 0-.7 0-1-.1z"/>
+        </svg>
+    </a>
+
+</div>
+
+    <!-- =========================
+         PRODUCTO ESTRELLA
+    ========================= -->
+
+    <section class="estrella-seccion" id="productos">
+
+        <span class="etiqueta">
+            👑 PRODUCTO DESTACADO
+        </span>
+
+
+        <h2 class="estrella-titulo">
+            Producto Estrella
+        </h2>
+
+
+        <div class="producto" id="producto">
+
+            <!-- DESTELLOS -->
+
+            <span class="destello d1">✦</span>
+
+            <span class="destello d2">✧</span>
+
+            <span class="destello d3">✦</span>
+
+            <span class="destello d4">✧</span>
+
+
+            <!-- IMAGEN DEL PRODUCTO -->
+
+            <img
+                src="imágenes/WhatsApp Image 2026-09-08 at 5.03.27 PM.jpeg"
+                alt="Producto Estrella"
+            >
+
+        </div>
+
+
+        <h3 class="nombre-producto">
+            Dolce Oso
+        </h3>
+
+
+        <p class="descripcion">
+            Nuestro producto favorito y uno de los más buscados.
+            Descubre una experiencia única y especial.
+        </p>
+
+
+        <div class="precio">
+            $230.000
+        </div>
+
+
+        <button class="boton-comprar">
+            🛍️ Ver producto
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* MENU */
+
+        function abrirMenu() {
+
+            const menu = document.getElementById("menu");
+
+            menu.classList.toggle("activo");
+
+        }
+
+
+
+        /* BUSCADOR */
+
+        function buscarProducto() {
+
+            const texto =
+                document
+                .getElementById("buscar")
+                .value
+                .toLowerCase();
+
+            const producto =
+                document.getElementById("producto");
+
+            const nombre =
+                document
+                .querySelector(".nombre-producto")
+                .textContent
+                .toLowerCase();
+
+
+            if (nombre.includes(texto)) {
+
+                producto.style.display = "inline-block";
+
+            } else {
+
+                producto.style.display = "none";
+
+            }
+
+        }
+
+        
+
+    </script>
+
+    <!-- ==========================================
+     PERSONALIZA TU REGALO
+     ========================================== -->
+
+<section class="personaliza" id="personaliza">
+
+    <div class="personaliza-decoracion">✦</div>
+
+    <h2>✨ Personaliza tu regalo ✨</h2>
+
+    <p class="personaliza-subtitulo">
+        Crea un detalle único pensado especialmente para esa persona especial. 💕
+    </p>
+
+    <div class="personaliza-contenedor">
+
+        <!-- PASO 1 -->
+        <div class="personaliza-paso">
+
+            <div class="numero-paso">1</div>
+
+            <div class="contenido-paso">
+
+                <h3>🎁 ¿Qué tipo de regalo quieres?</h3>
+
+                <div class="opciones">
+
+                    <button class="opcion-regalo"
+                            onclick="seleccionarOpcion(this, 'tipo', 'Ancheta')">
+                        🎁
+                        <span>Ancheta</span>
+                    </button>
+
+                    <button class="opcion-regalo"
+                            onclick="seleccionarOpcion(this, 'tipo', 'Flores')">
+                        🌷
+                        <span>Flores</span>
+                    </button>
+
+                    <button class="opcion-regalo"
+                            onclick="seleccionarOpcion(this, 'tipo', 'Caja de regalo')">
+                        🎀
+                        <span>Caja de regalo</span>
+                    </button>
+
+                    <button class="opcion-regalo"
+                            onclick="seleccionarOpcion(this, 'tipo', 'Detalle especial')">
+                        💝
+                        <span>Detalle especial</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASO 2 -->
+        <div class="personaliza-paso">
+
+            <div class="numero-paso">2</div>
+
+            <div class="contenido-paso">
+
+                <h3>🎨 Elige el color</h3>
+
+                <div class="colores">
+
+                    <button class="color-opcion rosa"
+                            onclick="seleccionarColor(this, 'Rosa')">
+                        🌸
+                        <span>Rosa</span>
+                    </button>
+
+                    <button class="color-opcion rojo"
+                            onclick="seleccionarColor(this, 'Rojo')">
+                        ❤️
+                        <span>Rojo</span>
+                    </button>
+
+                    <button class="color-opcion morado"
+                            onclick="seleccionarColor(this, 'Morado')">
+                        💜
+                        <span>Morado</span>
+                    </button>
+
+                    <button class="color-opcion azul"
+                            onclick="seleccionarColor(this, 'Azul')">
+                        💙
+                        <span>Azul</span>
+                    </button>
+
+                    <button class="color-opcion blanco"
+                            onclick="seleccionarColor(this, 'Blanco')">
+                        🤍
+                        <span>Blanco</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASO 3 -->
+        <div class="personaliza-paso">
+
+            <div class="numero-paso">3</div>
+
+            <div class="contenido-paso">
+
+                <h3>💕 ¿Cuál es la ocasión?</h3>
+
+                <div class="ocasiones">
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Cumpleaños')">
+                        🎂 Cumpleaños
+                    </button>
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Aniversario')">
+                        💕 Aniversario
+                    </button>
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Amor')">
+                        💖 Amor
+                    </button>
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Graduación')">
+                        🎓 Graduación
+                    </button>
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Celebración')">
+                        🥳 Celebración
+                    </button>
+
+                    <button onclick="seleccionarOpcion(this, 'ocasion', 'Porque sí')">
+                        🌷 Porque sí
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASO 4 -->
+        <div class="personaliza-paso">
+
+            <div class="numero-paso">4</div>
+
+            <div class="contenido-paso">
+
+                <h3>💌 Escribe tu mensaje</h3>
+
+                <textarea
+                    id="mensajePersonalizado"
+                    maxlength="200"
+                    placeholder="Escribe aquí el mensaje que quieres incluir en tu regalo..."
+                    oninput="actualizarMensaje()"></textarea>
+
+                <div class="contador">
+                    <span id="contador">0</span>/200
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VISTA PREVIA -->
+
+        <div class="vista-previa">
+
+            <div class="previa-corazon">♡</div>
+
+            <h3>✨ Tu regalo personalizado ✨</h3>
+
+            <div class="resumen">
+
+                <p>
+                    🎁 <strong>Tipo:</strong>
+                    <span id="resumenTipo">No seleccionado</span>
+                </p>
+
+                <p>
+                    🎨 <strong>Color:</strong>
+                    <span id="resumenColor">No seleccionado</span>
+                </p>
+
+                <p>
+                    💕 <strong>Ocasión:</strong>
+                    <span id="resumenOcasion">No seleccionada</span>
+                </p>
+
+                <div class="mensaje-resumen">
+                    💌
+                    <span id="resumenMensaje">
+                        Tu mensaje aparecerá aquí...
+                    </span>
+                </div>
+
+            </div>
+
+            <button class="boton-personalizar" onclick="crearRegalo()">
+                💝 Crear mi regalo
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     CONTACTO DOLCE VITA
+===================================== -->
+
+<section class="seccion-contacto" id="contacto">
+
+    <div class="contacto-brillo brillo-1">✦</div>
+    <div class="contacto-brillo brillo-2">♡</div>
+    <div class="contacto-brillo brillo-3">✧</div>
+    <div class="contacto-brillo brillo-4">♡</div>
+
+    <div class="contacto-contenido">
+
+        <div class="contacto-encabezado">
+
+            <span>✦ ESTAMOS PARA TI ✦</span>
+
+            <h2>
+                Hablemos de tu
+                <strong>detalle perfecto</strong> 💕
+            </h2>
+
+            <p>
+                ¿Tienes una idea especial? ¿Quieres sorprender a alguien?
+                Escríbenos y juntos podemos crear un detalle hecho
+                especialmente para esa persona. 🎁
+            </p>
+
+        </div>
+
+
+        <div class="contacto-grid">
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/573207036848"
+                target="_blank"
+                class="contacto-card whatsapp-card"
+            >
+
+                <div class="contacto-icono">
+                    💬
+                </div>
+
+                <div>
+                    <span class="contacto-titulo">
+                        WhatsApp
+                    </span>
+
+                    <strong>
+                        320 703 6848
+                    </strong>
+
+                    <p>
+                        Escríbenos directamente
+                    </p>
+                </div>
+
+                <div class="contacto-flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/dolcevitanchetas/"
+                target="_blank"
+                class="contacto-card instagram-card"
+            >
+
+                <div class="contacto-icono">
+                    📸
+                </div>
+
+                <div>
+                    <span class="contacto-titulo">
+                        Instagram
+                    </span>
+
+                    <strong>
+                        @dolcevitanchetas
+                    </strong>
+
+                    <p>
+                        Mira nuestras creaciones
+                    </p>
+                </div>
+
+                <div class="contacto-flecha">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- UBICACIÓN -->
+
+           <a
+    href="https://www.google.com/maps/search/?api=1&query=Calle+87+%2350-27,+Aranjuez,+Medell%C3%ADn,+Colombia"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contacto-card"
+>
+
+    <div class="contacto-icono">
+        📍
+    </div>
+
+    <div>
+
+        <span class="contacto-titulo">
+            Punto físico
+        </span>
+
+        <strong>
+            Calle 87 # 50-27
+        </strong>
+
+        <p>
+            Aranjuez, Medellín · Ver en Google Maps
+        </p>
+
+    </div>
+
+    <div class="contacto-flecha">
+        →
+    </div>
+
+</a>
+
+
+            <!-- HORARIO / PEDIDOS -->
+
+            <div class="contacto-card">
+
+                <div class="contacto-icono">
+                    🎁
+                </div>
+
+                <div>
+                    <span class="contacto-titulo">
+                        Pedidos
+                    </span>
+
+                    <strong>
+                        Personalizados
+                    </strong>
+
+                    <p>
+                        Cuéntanos qué tienes en mente
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="contacto-final">
+
+            <div class="contacto-corazones">
+                ♡ ♡ ♡
+            </div>
+
+            <h3>
+                Tu idea + nuestro amor = el regalo perfecto 💕
+            </h3>
+
+            <a
+                href="https://wa.me/573207036848?text=Hola%20Dolce%20Vita%20Anchetas%20💕%20Quiero%20información%20sobre%20un%20regalo."
+                target="_blank"
+                class="boton-contacto"
+            >
+                💝 Quiero hacer un pedido
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+let regalo = {
+    tipo: "",
+    color: "",
+    ocasion: "",
+    mensaje: ""
+};
+
+
+/* Seleccionar tipo u ocasión */
+
+function seleccionarOpcion(elemento, categoria, valor) {
+
+    const botones = elemento.parentElement.querySelectorAll("button");
+
+    botones.forEach(boton => {
+        boton.classList.remove("seleccionado");
+    });
+
+    elemento.classList.add("seleccionado");
+
+    regalo[categoria] = valor;
+
+    if (categoria === "tipo") {
+        document.getElementById("resumenTipo").textContent = valor;
+    }
+
+    if (categoria === "ocasion") {
+        document.getElementById("resumenOcasion").textContent = valor;
+    }
+}
+
+
+/* Seleccionar color */
+
+function seleccionarColor(elemento, color) {
+
+    const botones = elemento.parentElement.querySelectorAll("button");
+
+    botones.forEach(boton => {
+        boton.classList.remove("seleccionado");
+    });
+
+    elemento.classList.add("seleccionado");
+
+    regalo.color = color;
+
+    document.getElementById("resumenColor").textContent = color;
+}
+
+
+/* Mensaje */
+
+function actualizarMensaje() {
+
+    const textarea =
+        document.getElementById("mensajePersonalizado");
+
+    const mensaje = textarea.value;
+
+    regalo.mensaje = mensaje;
+
+    document.getElementById("contador").textContent =
+        mensaje.length;
+
+    document.getElementById("resumenMensaje").textContent =
+        mensaje || "Tu mensaje aparecerá aquí...";
+}
+
+
+/* Crear regalo */
+
+function crearRegalo() {
+
+    if (!regalo.tipo) {
+        alert("💕 Primero elige el tipo de regalo.");
+        return;
+    }
+
+    if (!regalo.color) {
+        alert("🎨 Elige un color para tu regalo.");
+        return;
+    }
+
+    if (!regalo.ocasion) {
+        alert("🌷 Elige la ocasión de tu regalo.");
+        return;
+    }
+
+    if (!regalo.mensaje.trim()) {
+        alert("💌 Escribe un mensaje para tu regalo.");
+        return;
+    }
+
+    alert(
+        "💝 ¡Tu regalo está listo!\n\n" +
+        "🎁 Tipo: " + regalo.tipo + "\n" +
+        "🎨 Color: " + regalo.color + "\n" +
+        "💕 Ocasión: " + regalo.ocasion + "\n" +
+        "💌 Mensaje: " + regalo.mensaje
+    );
+}
+
+</script>
+
+<script>
+
+/* ==========================================
+   CARRITO DE DOLCE VITA ANCHETAS
+   ========================================== */
+
+let carrito = [];
+
+
+/* ==========================================
+   ABRIR CARRITO
+   ========================================== */
+
+function abrirCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.add("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.add("activo");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ==========================================
+   CERRAR CARRITO
+   ========================================== */
+
+function cerrarCarrito() {
+
+    document
+        .getElementById("panelCarrito")
+        .classList.remove("activo");
+
+    document
+        .getElementById("fondoCarrito")
+        .classList.remove("activo");
+
+    document.body.style.overflow = "";
+}
+
+
+/* ==========================================
+   AGREGAR PRODUCTO
+   ========================================== */
+
+function agregarAlCarrito(
+    nombre,
+    precio,
+    imagen
+) {
+
+    const productoExistente =
+        carrito.find(
+            producto =>
+                producto.nombre === nombre
+        );
+
+
+    if (productoExistente) {
+
+        productoExistente.cantidad++;
+
+    } else {
+
+        carrito.push({
+
+            nombre: nombre,
+
+            precio: precio,
+
+            imagen: imagen,
+
+            cantidad: 1
+
+        });
+
+    }
+
+
+    actualizarCarrito();
+
+    abrirCarrito();
+
+    animarContador();
+}
+
+
+/* ==========================================
+   ACTUALIZAR CARRITO
+   ========================================== */
+
+function actualizarCarrito() {
+
+    const contenedor =
+        document.getElementById(
+            "productosCarrito"
+        );
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+    const subtotal =
+        document.getElementById(
+            "subtotalCarrito"
+        );
+
+    const carritoVacio =
+        document.getElementById(
+            "carritoVacio"
+        );
+
+    const carritoFooter =
+        document.getElementById(
+            "carritoFooter"
+        );
+
+
+    contenedor.innerHTML = "";
+
+
+    let cantidadTotal = 0;
+
+    let precioTotal = 0;
+
+
+    carrito.forEach(
+        (producto, indice) => {
+
+            cantidadTotal +=
+                producto.cantidad;
+
+            precioTotal +=
+                producto.precio *
+                producto.cantidad;
+
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "item-carrito";
+
+
+            item.innerHTML = `
+
+                <div class="item-imagen">
+
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}"
+                    >
+
+                </div>
+
+
+                <div class="item-info">
+
+                    <h4>
+                        ${producto.nombre}
+                    </h4>
+
+                    <div class="item-precio">
+                        ${formatearPrecio(producto.precio)}
+                    </div>
+
+
+                    <div class="cantidad">
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                -1
+                            )">
+                            −
+                        </button>
+
+
+                        <span>
+                            ${producto.cantidad}
+                        </span>
+
+
+                        <button
+                            onclick="cambiarCantidad(
+                                ${indice},
+                                1
+                            )">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="eliminar-producto"
+                    onclick="eliminarProducto(
+                        ${indice}
+                    )"
+                    title="Eliminar">
+
+                    🗑️
+
+                </button>
+
+            `;
+
+
+            contenedor.appendChild(item);
+
+        }
+    );
+
+
+    contador.textContent =
+        cantidadTotal;
+
+
+    subtotal.textContent =
+        formatearPrecio(precioTotal);
+
+
+    if (carrito.length === 0) {
+
+        carritoVacio.style.display =
+            "flex";
+
+        carritoFooter.style.display =
+            "none";
+
+    } else {
+
+        carritoVacio.style.display =
+            "none";
+
+        carritoFooter.style.display =
+            "block";
+    }
+}
+
+
+/* ==========================================
+   CAMBIAR CANTIDAD
+   ========================================== */
+
+function cambiarCantidad(
+    indice,
+    cambio
+) {
+
+    carrito[indice].cantidad +=
+        cambio;
+
+
+    if (
+        carrito[indice].cantidad <= 0
+    ) {
+
+        carrito.splice(indice, 1);
+
+    }
+
+
+    actualizarCarrito();
+}
+
+
+/* ==========================================
+   ELIMINAR PRODUCTO
+   ========================================== */
+
+function eliminarProducto(indice) {
+
+    carrito.splice(indice, 1);
+
+    actualizarCarrito();
+}
+
+
+/* ==========================================
+   FORMATO DE PRECIO
+   ========================================== */
+
+function formatearPrecio(precio) {
+
+    return new Intl.NumberFormat(
+        "es-CO",
+        {
+            style: "currency",
+            currency: "COP",
+            maximumFractionDigits: 0
+        }
+    ).format(precio);
+}
+
+
+/* ==========================================
+   ANIMACIÓN DEL CONTADOR
+   ========================================== */
+
+function animarContador() {
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+
+    contador.classList.remove(
+        "activo"
+    );
+
+
+    void contador.offsetWidth;
+
+
+    contador.classList.add(
+        "activo"
+    );
+}
+
+
+/* ==========================================
+   FINALIZAR PEDIDO
+   ========================================== */
+
+function finalizarCompra() {
+
+    if (carrito.length === 0) {
+
+        alert(
+            "💕 Tu carrito está vacío."
+        );
+
+        return;
+    }
+
+
+    let mensaje =
+        "💝 PEDIDO - DOLCE VITA ANCHETAS\n\n";
+
+
+    let total = 0;
+
+
+    carrito.forEach(
+        producto => {
+
+            const subtotal =
+                producto.precio *
+                producto.cantidad;
+
+
+            total += subtotal;
+
+
+            mensaje +=
+                "🎁 " +
+                producto.nombre +
+                "\n";
+
+            mensaje +=
+                "Cantidad: " +
+                producto.cantidad +
+                "\n";
+
+            mensaje +=
+                "Precio: " +
+                formatearPrecio(
+                    producto.precio
+                ) +
+                "\n\n";
+
+        }
+    );
+
+
+    mensaje +=
+        "💗 TOTAL: " +
+        formatearPrecio(total);
+
+
+    alert(mensaje);
+}
+
+
+/* ==========================================
+   INICIAR CARRITO
+   ========================================== */
+
+actualizarCarrito();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Creadora | Dolce Vita Anchetas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.45), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(216, 180, 254, 0.35), transparent 25%),
+                radial-gradient(circle at 50% 90%, rgba(255, 192, 203, 0.35), transparent 30%),
+                #fff5fa;
+            color: #5c2341;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           BARRA SUPERIOR
+        ========================================= */
+
+        .barra {
+            height: 90px;
+            width: 100%;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #d81b60,
+                    #ec407a,
+                    #f06292,
+                    #ec407a,
+                    #d81b60
+                );
+
+            box-shadow:
+                0 8px 30px rgba(216, 27, 96, 0.30);
+        }
+
+         .logo {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .titulo-barra {
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        }
+
+        .boton-volver {
+            position: absolute;
+            right: 30px;
+
+            padding: 11px 20px;
+
+            border: 2px solid white;
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.18);
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            backdrop-filter: blur(8px);
+
+            transition: 0.3s;
+        }
+
+        .boton-volver:hover {
+            background: white;
+            color: #d81b60;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           DECORACIONES FLOTANTES
+        ========================================= */
+
+        .decoracion {
+            position: fixed;
+            z-index: 1;
+
+            pointer-events: none;
+
+            font-size: 25px;
+            opacity: 0.5;
+
+            animation: flotar 5s ease-in-out infinite;
+        }
+
+        .d1 {
+            top: 25%;
+            left: 4%;
+        }
+
+        .d2 {
+            top: 48%;
+            right: 5%;
+            animation-delay: 1s;
+        }
+
+        .d3 {
+            top: 75%;
+            left: 7%;
+            animation-delay: 2s;
+        }
+
+        .d4 {
+            top: 85%;
+            right: 8%;
+            animation-delay: 3s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(8deg);
+            }
+        }
+
+
+        /* =========================================
+           HERO / PORTADA
+        ========================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            padding-top: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f6 0%,
+                    #ffd6e8 45%,
+                    #f5d9ff 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(255,255,255,0.35);
+
+            border-radius: 50%;
+
+            top: -200px;
+            left: -150px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            background: rgba(255,255,255,0.25);
+
+            border-radius: 50%;
+
+            bottom: -200px;
+            right: -150px;
+        }
+
+        .hero-contenido {
+            width: 90%;
+            max-width: 1200px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 60px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-texto {
+            text-align: left;
+        }
+
+        .mini-titulo {
+            color: #d81b60;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: clamp(60px, 8vw, 100px);
+
+            color: #c2185b;
+
+            line-height: 1;
+
+            margin-bottom: 15px;
+
+            text-shadow:
+                3px 5px 0 rgba(255,255,255,0.8);
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: clamp(22px, 3vw, 36px);
+
+            color: #6a2445;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 570px;
+
+            font-size: 16px;
+            line-height: 1.9;
+
+            color: #75405a;
+
+            margin-bottom: 30px;
+        }
+
+        .boton-conocer {
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            border-radius: 40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d81b60,
+                    #ec407a,
+                    #ba68c8
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 30px rgba(216,27,96,0.3);
+
+            transition: 0.3s;
+        }
+
+        .boton-conocer:hover {
+            transform: translateY(-5px) scale(1.03);
+
+            box-shadow:
+                0 15px 35px rgba(216,27,96,0.4);
+        }
+
+
+        /* =========================================
+           FOTO PRINCIPAL
+        ========================================= */
+
+        .foto-principal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .marco-principal {
+            width: 390px;
+            height: 470px;
+
+            max-width: 90vw;
+
+            padding: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff,
+                    #ffd1e3,
+                    #e7c6ff
+                );
+
+            border-radius: 220px 220px 40px 40px;
+
+            box-shadow:
+                0 25px 60px rgba(180, 55, 120, 0.28);
+
+            transform: rotate(2deg);
+
+            position: relative;
+        }
+
+        .marco-principal::before {
+            content: "♡";
+
+            position: absolute;
+
+            top: -30px;
+            right: -25px;
+
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #ec407a;
+
+            font-size: 38px;
+
+            box-shadow:
+                0 8px 25px rgba(216,27,96,0.20);
+
+            z-index: 3;
+        }
+
+        .marco-principal img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 210px 210px 30px 30px;
+
+            display: block;
+        }
+
+        .etiqueta-foto {
+            position: absolute;
+
+            bottom: 25px;
+            left: -30px;
+
+            padding: 14px 22px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            color: #d81b60;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.12);
+
+            transform: rotate(-5deg);
+        }
+
+
+        /* =========================================
+           SECCIONES GENERALES
+        ========================================= */
+
+        .seccion {
+            width: 90%;
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 100px 0;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .titulo-seccion span {
+            display: block;
+
+            color: #d81b60;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+        .titulo-seccion h2 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: clamp(45px, 6vw, 70px);
+
+            color: #c2185b;
+        }
+
+        .titulo-seccion p {
+            max-width: 650px;
+
+            margin: 10px auto 0;
+
+            color: #805267;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           HISTORIA
+        ========================================= */
+
+        .historia {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .historia-fotos {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            position: relative;
+        }
+
+        .foto-historia {
+            height: 270px;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 35px rgba(180,55,120,0.15);
+
+            border: 6px solid white;
+        }
+
+        .foto-historia:nth-child(2) {
+            margin-top: 50px;
+        }
+
+        .foto-historia img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .foto-historia:hover img {
+            transform: scale(1.08);
+        }
+
+        .historia-texto {
+            background: rgba(255,255,255,0.75);
+
+            padding: 45px;
+
+            border-radius: 35px;
+
+            border: 2px solid rgba(236,64,122,0.12);
+
+            box-shadow:
+                0 20px 50px rgba(180,55,120,0.10);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .historia-texto h3 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 45px;
+
+            color: #d81b60;
+
+            margin-bottom: 20px;
+        }
+
+        .historia-texto p {
+            font-size: 15px;
+
+            line-height: 2;
+
+            color: #684057;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================================
+           FRASE DESTACADA
+        ========================================= */
+
+        .frase {
+            width: 100%;
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d81b60,
+                    #ec407a,
+                    #ba68c8
+                );
+
+            color: white;
+
+            overflow: hidden;
+        }
+
+        .frase::before,
+        .frase::after {
+            content: "♡";
+
+            position: absolute;
+
+            font-size: 180px;
+
+            color: rgba(255,255,255,0.08);
+        }
+
+        .frase::before {
+            left: -30px;
+            top: -70px;
+        }
+
+        .frase::after {
+            right: -30px;
+            bottom: -90px;
+        }
+
+        .frase h2 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: clamp(45px, 6vw, 75px);
+
+            margin-bottom: 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .frase p {
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           ESENCIA
+        ========================================= */
+
+        .tarjetas {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .tarjeta {
+            padding: 40px 28px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            border: 2px solid #ffe0eb;
+
+            box-shadow:
+                0 15px 35px rgba(180,55,120,0.08);
+
+            transition: 0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .tarjeta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: #ffe1ec;
+
+            top: -50px;
+            right: -50px;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 25px 45px rgba(180,55,120,0.16);
+        }
+
+        .tarjeta-icono {
+            width: 75px;
+            height: 75px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd1e3,
+                    #f1d6ff
+                );
+
+            font-size: 35px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .tarjeta h3 {
+            color: #c2185b;
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .tarjeta p {
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: #765064;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           GALERÍA
+        ========================================= */
+
+        .galeria {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            grid-auto-rows: 280px;
+
+            gap: 20px;
+        }
+
+        .foto-galeria {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 30px;
+
+            border: 6px solid white;
+
+            box-shadow:
+                0 15px 35px rgba(180,55,120,0.14);
+        }
+
+        .foto-galeria.grande {
+            grid-row: span 2;
+        }
+
+        .foto-galeria img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.6s;
+        }
+
+        .foto-galeria:hover img {
+            transform: scale(1.08);
+        }
+
+        .texto-foto {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 25px 20px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(80,15,45,0.8)
+                );
+
+            color: white;
+
+            font-weight: 600;
+
+            transform: translateY(100%);
+
+            transition: 0.4s;
+        }
+
+        .foto-galeria:hover .texto-foto {
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           MENSAJE FINAL
+        ========================================= */
+
+        .mensaje-final {
+            width: 90%;
+            max-width: 950px;
+
+            margin: 0 auto 100px;
+
+            padding: 70px 50px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff,
+                    #fff0f6,
+                    #f6edff
+                );
+
+            border-radius: 40px;
+
+            border: 2px solid #ffd5e5;
+
+            box-shadow:
+                0 20px 50px rgba(180,55,120,0.10);
+        }
+
+        .mensaje-final .corazon {
+            font-size: 50px;
+
+            color: #ec407a;
+
+            margin-bottom: 15px;
+        }
+
+        .mensaje-final h2 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: clamp(45px, 6vw, 65px);
+
+            color: #c2185b;
+
+            margin-bottom: 20px;
+        }
+
+        .mensaje-final p {
+            max-width: 720px;
+
+            margin: auto;
+
+            line-height: 1.9;
+
+            color: #70445a;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding: 45px 20px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #c2185b,
+                    #ec407a,
+                    #ba68c8
+                );
+        }
+
+        footer h3 {
+            font-family: 'Great Vibes', cursive;
+
+            font-size: 40px;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+        .corazones-footer {
+            margin-top: 15px;
+
+            font-size: 20px;
+
+            letter-spacing: 8px;
+        }
+
+
+        /* =========================================
+           ANIMACIÓN DE APARICIÓN
+        ========================================= */
+
+        .aparecer {
+            animation: aparecer 1s ease forwards;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .hero-contenido {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 60px 0;
+            }
+
+            .hero-texto {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .foto-principal {
+                order: -1;
+            }
+
+            .marco-principal {
+                width: 320px;
+                height: 390px;
+            }
+
+            .historia {
+                grid-template-columns: 1fr;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .barra {
+                height: 75px;
+            }
+
+            body {
+                padding-top: 0;
+            }
+
+            .logo {
+                left: 15px;
+
+                width: 48px;
+                height: 48px;
+
+                font-size: 23px;
+            }
+
+            .titulo-barra {
+                font-size: 29px;
+            }
+
+            .boton-volver {
+                right: 12px;
+
+                padding: 8px 12px;
+
+                font-size: 11px;
+            }
+
+            .hero {
+                padding-top: 75px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .marco-principal {
+                width: 280px;
+                height: 350px;
+            }
+
+            .seccion {
+                padding: 70px 0;
+            }
+
+            .historia-texto {
+                padding: 30px 22px;
+            }
+
+            .historia-fotos {
+                gap: 10px;
+            }
+
+            .foto-historia {
+                height: 220px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr;
+
+                grid-auto-rows: 280px;
+            }
+
+            .foto-galeria.grande {
+                grid-row: span 1;
+            }
+
+            .mensaje-final {
+                padding: 50px 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         DECORACIONES
+    ========================================== -->
+
+    <div class="decoracion d1">♡</div>
+    <div class="decoracion d2">✦</div>
+    <div class="decoracion d3">🌸</div>
+    <div class="decoracion d4">💕</div>
+
+
+    <!-- =========================================
+         BARRA SUPERIOR
+    ========================================== -->
+
+    <header class="barra">
+
+        <div class="logo">
+            <img src="imágenes/WhatsApp Image 2026-09-08 at 3.49.59 PM.jpeg" alt="">
+        </div>
+
+        <div class="titulo-barra">
+            Dolce Vita Anchetas
+        </div>
+
+        <a href="index.html" class="boton-volver">
+            ← Volver
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-contenido">
+
+            <div class="hero-texto aparecer">
+
+                <div class="mini-titulo">
+                    ✦ Conoce a nuestra creadora ✦
+                </div>
+
+                <h1>
+                    Stefanni
+                </h1>
+
+                <h2>
+                    Daniela Rivero Flores
+                </h2>
+
+                <p>
+                    El corazón creativo detrás de
+                    <strong>Dolce Vita Anchetas</strong>.
+                    Una mujer apasionada por transformar
+                    pequeños detalles en grandes emociones
+                    y convertir cada regalo en un recuerdo
+                    especial.
+                </p>
+
+                <a href="#historia" class="boton-conocer">
+                    💕 Conocer su historia
+                </a>
+
+            </div>
+
+
+            <div class="foto-principal aparecer">
+
+                <div class="marco-principal">
+
+                    <!-- CAMBIA "stefanni1.jpg" POR TU FOTO -->
+
+                    <img
+                        src="stefanni1.jpeg"
+                        alt="Stefanni Daniela Rivero Flores"
+                    >
+
+                    <div class="etiqueta-foto">
+                        ✨ Nuestra creadora
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         HISTORIA
+    ========================================== -->
+
+    <section class="seccion" id="historia">
+
+        <div class="titulo-seccion">
+
+            <span>♡ Su esencia ♡</span>
+
+            <h2>
+                La historia detrás de la magia
+            </h2>
+
+            <p>
+                Conoce un poco más sobre la persona que
+                está detrás de cada detalle de Dolce Vita Anchetas.
+            </p>
+
+        </div>
+
+
+        <div class="historia">
+
+
+            <div class="historia-fotos">
+
+                <!-- FOTO 2 -->
+
+                <div class="foto-historia">
+
+                    <img
+                        src="stefanni2.jpeg"
+                        alt="Stefanni Daniela"
+                    >
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+
+                <div class="foto-historia">
+
+                    <img
+                        src="stefanni3.jpeg"
+                        alt="Stefanni Daniela"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="historia-texto">
+
+                <h3>
+                    Una creadora con corazón
+                </h3>
+
+                <p>
+                    <strong>Stefanni Daniela Rivero Flores</strong>
+                    es el corazón creativo detrás de
+                    Dolce Vita Anchetas, una marca creada
+                    desde el amor, la dedicación y el deseo
+                    de transformar pequeños detalles en
+                    momentos inolvidables.
+                </p>
+
+                <p>
+                    Desde el comienzo, Stefanni ha buscado
+                    que cada regalo tenga algo especial,
+                    cuidando no solamente su presentación,
+                    sino también la emoción que transmite
+                    cuando llega a las manos de alguien importante.
+                </p>
+
+                <p>
+                    Su creatividad, sensibilidad y atención
+                    a los pequeños detalles son parte
+                    fundamental de la esencia de
+                    <strong>Dolce Vita Anchetas</strong>.
+                    Para ella, regalar no significa simplemente
+                    entregar un producto; significa expresar
+                    cariño, celebrar una fecha especial,
+                    sorprender a alguien y crear recuerdos
+                    que puedan permanecer en el corazón.
+                </p>
+
+                <p>
+                    Cada idea, cada combinación de colores
+                    y cada detalle de la marca nace con la
+                    intención de hacer sentir especial a quien
+                    recibe un regalo. 💕
+                </p>
+
+                <p>
+                    <strong>
+                        Stefanni es la persona que convierte
+                        ideas en detalles, detalles en emociones
+                        y emociones en recuerdos.
+                    </strong>
+                </p>
+
+                <p>
+                    Gracias a su pasión y dedicación,
+                    Dolce Vita Anchetas continúa creciendo
+                    como un espacio lleno de color, ternura,
+                    creatividad y mucho amor. 🌸✨
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FRASE
+    ========================================== -->
+
+    <section class="frase">
+
+        <h2>
+            “Detrás de cada detalle existe una historia.”
+        </h2>
+
+        <p>
+            Y detrás de cada historia existe alguien que
+            decidió poner un poquito de amor, creatividad
+            y dedicación para hacerla realidad. 💕
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ESENCIA DE STEFANNI
+    ========================================== -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+
+            <span>✦ Lo que la representa ✦</span>
+
+            <h2>
+                La esencia de una creadora
+            </h2>
+
+            <p>
+                Tres elementos que forman parte de la
+                personalidad y filosofía de Dolce Vita Anchetas.
+            </p>
+
+        </div>
+
+
+        <div class="tarjetas">
+
+
+            <div class="tarjeta">
+
+                <div class="tarjeta-icono">
+                    🎨
+                </div>
+
+                <h3>
+                    Creatividad
+                </h3>
+
+                <p>
+                    Cada idea comienza con imaginación.
+                    Stefanni busca crear detalles únicos,
+                    bonitos y especiales que puedan transmitir
+                    exactamente aquello que las palabras
+                    muchas veces no consiguen expresar.
+                </p>
+
+            </div>
+
+
+
+            <div class="tarjeta">
+
+                <div class="tarjeta-icono">
+                    💗
+                </div>
+
+                <h3>
+                    Amor
+                </h3>
+
+                <p>
+                    El amor es una parte esencial de cada
+                    creación. Cada producto busca convertirse
+                    en una manera bonita de decir “te quiero”,
+                    “gracias”, “feliz cumpleaños” o simplemente
+                    “pensé en ti”.
+                </p>
+
+            </div>
+
+
+
+            <div class="tarjeta">
+
+                <div class="tarjeta-icono">
+                    ✨
+                </div>
+
+                <h3>
+                    Dedicación
+                </h3>
+
+                <p>
+                    Cada pequeño detalle cuenta. La dedicación
+                    está presente desde la elección de los
+                    elementos hasta la presentación final,
+                    porque cada persona merece recibir algo
+                    preparado con cariño.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GALERÍA
+    ========================================== -->
+
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+
+            <span>📸 Momentos especiales 📸</span>
+
+            <h2>
+                Conoce a Stefanni
+            </h2>
+
+            <p>
+                Un pequeño espacio para mostrar diferentes
+                momentos y recuerdos de nuestra creadora.
+            </p>
+
+        </div>
+
+
+        <div class="galeria">
+
+
+            <!-- FOTO 4 -->
+
+            <div class="foto-galeria grande">
+
+                <img
+                    src="stefanni4.jpeg"
+                    alt="Stefanni"
+                >
+
+                <div class="texto-foto">
+                    💕 La mujer detrás de Dolce Vita
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 5 -->
+
+            <div class="foto-galeria">
+
+                <img
+                    src="stefanni5.jpeg"
+                    alt="Stefanni Daniela"
+                >
+
+                <div class="texto-foto">
+                    ✨ Creatividad y amor
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 6 -->
+
+            <div class="foto-galeria">
+
+                <img
+                    src="stefanni6.jpeg"
+                    alt="Stefanni"
+                >
+
+                <div class="texto-foto">
+                    🌸 Momentos que inspiran
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 7 -->
+
+            <div class="foto-galeria">
+
+                <img
+                    src="stefanni7.jpeg"
+                    alt="Stefanni Daniela"
+                >
+
+                <div class="texto-foto">
+                    🎀 Una historia llena de detalles
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 8 -->
+
+            <div class="foto-galeria">
+
+                <img
+                    src="stefanni8.jpeg"
+                    alt="Stefanni Daniela Rivero Flores"
+                >
+
+                <div class="texto-foto">
+                    💖 El corazón de nuestra marca
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MENSAJE FINAL
+    ========================================== -->
+
+    <section class="mensaje-final">
+
+        <div class="corazon">
+            ♡
+        </div>
+
+        <h2>
+            Gracias por ser parte de esta historia
+        </h2>
+
+        <p>
+            Dolce Vita Anchetas no es solamente una marca.
+            Es una forma de compartir cariño, celebrar
+            momentos y demostrarle a las personas especiales
+            cuánto significan para nosotros.
+            <br><br>
+
+            Detrás de cada ancheta, cada flor, cada caja
+            y cada detalle está la ilusión de crear algo
+            que haga sonreír a alguien.
+            <br><br>
+
+            <strong>
+                Gracias a Stefanni Daniela Rivero Flores
+                por convertir esa ilusión en una realidad.
+            </strong>
+            💕🌷✨
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <h3>
+            Dolce Vita Anchetas
+        </h3>
+
+        <p>
+            Creado con amor, creatividad y muchos detalles. 💕
+        </p>
+
+        <div class="corazones-footer">
+            ♡ ✦ ♡ ✦ ♡
+        </div>
+
+        <p style="margin-top: 18px;">
+            © 2026 Dolce Vita Anchetas
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        // Animación sencilla cuando aparecen las secciones
+
+        const elementos =
+            document.querySelectorAll(
+                '.seccion, .frase, .mensaje-final'
+            );
+
+
+        const observador = new IntersectionObserver(
+            (entradas) => {
+
+                entradas.forEach((entrada) => {
+
+                    if (entrada.isIntersecting) {
+
+                        entrada.target.classList.add('aparecer');
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        elementos.forEach((elemento) => {
+
+            observador.observe(elemento);
+
+        });
+
+
+        // Efecto de movimiento suave del mouse
+        // en la fotografía principal
+
+        const foto =
+            document.querySelector('.marco-principal');
+
+
+        document.addEventListener('mousemove', (e) => {
+
+            if (window.innerWidth > 900) {
+
+                const x =
+                    (window.innerWidth / 2 - e.clientX) / 80;
+
+                const y =
+                    (window.innerHeight / 2 - e.clientY) / 80;
+
+                foto.style.transform =
+                    `rotate(2deg) translate(${x}px, ${y}px)`;
+
+            }
+
+        });
+
+    </script>
+
+
+</body>
+</html>

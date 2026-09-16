@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="calendario.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendario | Dolce Vita Anchetas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         BARRA
+    ========================================= -->
+
+    <header class="barra">
+
+        <a href="index.html" class="logo">
+            <img src="imágenes/logo.jpeg" alt="Dolce Vita Anchetas">
+        </a>
+
+        <h1 class="titulo">
+            Dolce Vita Anchetas
+        </h1>
+
+        <div class="menu-btn" onclick="abrirMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MENU
+    ========================================= -->
+
+    <nav class="menu" id="menu">
+
+        <a href="index.html">
+            🏠 Inicio
+        </a>
+
+        <a href="CATALOGO/catalogo.html">
+            🎁 Catálogo
+        </a>
+
+        <a href="calendario.html">
+            📅 Calendario
+        </a>
+
+        <a href="creadora.html">
+            👑 La creadora
+        </a>
+
+        <a href="index.html#personaliza">
+            ✨ Personaliza tu regalo
+        </a>
+
+        <a href="index.html#contacto">
+            📞 Contacto
+        </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         DECORACIONES
+    ========================================= -->
+
+    <div class="flotante f1">♡</div>
+    <div class="flotante f2">✦</div>
+    <div class="flotante f3">♡</div>
+
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+
+    <section class="hero-calendario">
+
+        <div class="decoracion">
+            ♡ ✦ ♡
+        </div>
+
+        <span class="mini-titulo">
+            DOLCE VITA ANCHETAS
+        </span>
+
+        <h1>
+            Calendario de
+            <span>fechas especiales</span>
+        </h1>
+
+        <p>
+            Porque cada momento merece un detalle.
+            Descubre las fechas más importantes del año
+            y encuentra la ocasión perfecta para sorprender
+            a esa persona especial. 💕
+        </p>
+
+        <div class="decoracion">
+            ✦ ♡ ✦
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FILTROS
+    ========================================= -->
+
+    <div class="filtros">
+
+        <button class="filtro activo" onclick="mostrarTodo(this)">
+            ✨ Todas
+        </button>
+
+        <button class="filtro" onclick="filtrar('amor', this)">
+            ❤️ Amor
+        </button>
+
+        <button class="filtro" onclick="filtrar('familia', this)">
+            👨‍👩‍👧 Familia
+        </button>
+
+        <button class="filtro" onclick="filtrar('celebracion', this)">
+            🎉 Celebraciones
+        </button>
+
+        <button class="filtro" onclick="filtrar('comercial', this)">
+            🛍️ Especiales
+        </button>
+
+    </div>
+
+
+    <!-- =========================================
+         CALENDARIO
+    ========================================= -->
+
+    <main class="calendario">
+
+
+        <!-- ENERO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Enero</h2>
+                <span>MES 01</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('🎉','Año Nuevo','1 de enero','El comienzo de un nuevo año, nuevas metas y nuevos momentos para compartir.','✨ Un detalle para comenzar el año con amor.')">
+
+                    <div class="dia">1</div>
+
+                    <div class="fecha-info">
+                        <strong>Año Nuevo</strong>
+                        <small>Comienzo de un nuevo año</small>
+                    </div>
+
+                    <div class="icono-fecha">🎉</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- FEBRERO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Febrero</h2>
+                <span>MES 02</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="amor"
+                     onclick="mostrarFecha('💘','San Valentín','14 de febrero','Una fecha perfecta para celebrar el amor, la amistad y esos sentimientos que hacen especial la vida.','🌹 Rosas, chocolates, anchetas románticas o un detalle personalizado.')">
+
+                    <div class="dia">14</div>
+
+                    <div class="fecha-info">
+                        <strong>San Valentín</strong>
+                        <small>Día del amor</small>
+                    </div>
+
+                    <div class="icono-fecha">💘</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MARZO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Marzo</h2>
+                <span>MES 03</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="familia"
+                     onclick="mostrarFecha('🌷','Día Internacional de la Mujer','8 de marzo','Una oportunidad para reconocer y celebrar a las mujeres importantes de nuestra vida.','🌷 Flores, chocolates y detalles personalizados.')">
+
+                    <div class="dia">8</div>
+
+                    <div class="fecha-info">
+                        <strong>Día de la Mujer</strong>
+                        <small>Celebrar a ellas</small>
+                    </div>
+
+                    <div class="icono-fecha">🌷</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ABRIL -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Abril</h2>
+                <span>MES 04</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('📚','Día del Idioma','23 de abril','Una fecha para celebrar las palabras, los libros y la riqueza de nuestro idioma.','📚 Un detalle para amantes de la lectura.')">
+
+                    <div class="dia">23</div>
+
+                    <div class="fecha-info">
+                        <strong>Día del Idioma</strong>
+                        <small>Celebrar las palabras</small>
+                    </div>
+
+                    <div class="icono-fecha">📚</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MAYO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Mayo</h2>
+                <span>MES 05</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="familia"
+                     onclick="mostrarFecha('🌹','Día de la Madre','Segundo domingo de mayo','Una de las fechas más especiales para agradecer y celebrar a mamá.','💐 Flores, anchetas, chocolates y regalos personalizados.')">
+
+                    <div class="dia">🌹</div>
+
+                    <div class="fecha-info">
+                        <strong>Día de la Madre</strong>
+                        <small>Segundo domingo de mayo</small>
+                    </div>
+
+                    <div class="icono-fecha">💐</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- JUNIO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Junio</h2>
+                <span>MES 06</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="familia"
+                     onclick="mostrarFecha('👔','Día del Padre','Tercer domingo de junio','Un día para celebrar a papá y agradecerle por todo su cariño.','🎁 Anchetas, detalles personalizados y regalos especiales.')">
+
+                    <div class="dia">🎁</div>
+
+                    <div class="fecha-info">
+                        <strong>Día del Padre</strong>
+                        <small>Tercer domingo de junio</small>
+                    </div>
+
+                    <div class="icono-fecha">👔</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- JULIO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Julio</h2>
+                <span>MES 07</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('🇨🇴','Independencia de Colombia','20 de julio','Una fecha nacional para celebrar la independencia de Colombia.','🇨🇴 Un detalle con inspiración colombiana.')">
+
+                    <div class="dia">20</div>
+
+                    <div class="fecha-info">
+                        <strong>Independencia de Colombia</strong>
+                        <small>Fecha nacional</small>
+                    </div>
+
+                    <div class="icono-fecha">🇨🇴</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- AGOSTO -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Agosto</h2>
+                <span>MES 08</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('🇨🇴','Batalla de Boyacá','7 de agosto','Una de las fechas históricas más importantes de Colombia.','🇨🇴 Celebra nuestras raíces y nuestra historia.')">
+
+                    <div class="dia">7</div>
+
+                    <div class="fecha-info">
+                        <strong>Batalla de Boyacá</strong>
+                        <small>Fecha histórica de Colombia</small>
+                    </div>
+
+                    <div class="icono-fecha">🇨🇴</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SEPTIEMBRE -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Septiembre</h2>
+                <span>MES 09</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="amor"
+                     onclick="mostrarFecha('💕','Amor y Amistad','Tercer sábado de septiembre','En Colombia celebramos el amor y la amistad compartiendo detalles con las personas que queremos.','💕 Anchetas, flores, chocolates y detalles para sorprender.')">
+
+                    <div class="dia">💕</div>
+
+                    <div class="fecha-info">
+                        <strong>Amor y Amistad</strong>
+                        <small>Tercer sábado de septiembre</small>
+                    </div>
+
+                    <div class="icono-fecha">💝</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- OCTUBRE -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Octubre</h2>
+                <span>MES 10</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('🎃','Halloween','31 de octubre','Una fecha divertida para compartir dulces y detalles especiales.','🍬 Una ancheta llena de dulces y sorpresas.')">
+
+                    <div class="dia">31</div>
+
+                    <div class="fecha-info">
+                        <strong>Halloween</strong>
+                        <small>Dulces y diversión</small>
+                    </div>
+
+                    <div class="icono-fecha">🎃</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- NOVIEMBRE -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Noviembre</h2>
+                <span>MES 11</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="comercial"
+                     onclick="mostrarFecha('🛍️','Black Friday','Último viernes de noviembre','Una de las fechas comerciales más importantes del año.','🛍️ Perfecta para promociones y detalles especiales.')">
+
+                    <div class="dia">🛍️</div>
+
+                    <div class="fecha-info">
+                        <strong>Black Friday</strong>
+                        <small>Último viernes de noviembre</small>
+                    </div>
+
+                    <div class="icono-fecha">🛒</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- DICIEMBRE -->
+
+        <article class="mes">
+
+            <div class="mes-header">
+                <h2>Diciembre</h2>
+                <span>MES 12</span>
+            </div>
+
+            <div class="fechas">
+
+                <div class="fecha especial"
+                     data-tipo="familia"
+                     onclick="mostrarFecha('🎄','Navidad','25 de diciembre','Una de las fechas más bonitas del año para compartir con familiares y seres queridos.','🎁 Anchetas navideñas, regalos y detalles personalizados.')">
+
+                    <div class="dia">25</div>
+
+                    <div class="fecha-info">
+                        <strong>Navidad</strong>
+                        <small>Celebrar y compartir</small>
+                    </div>
+
+                    <div class="icono-fecha">🎄</div>
+
+                </div>
+
+                <div class="fecha especial"
+                     data-tipo="celebracion"
+                     onclick="mostrarFecha('🥂','Nochevieja','31 de diciembre','Cerramos el año agradeciendo por todo lo vivido y recibimos un nuevo comienzo.','✨ Un detalle para despedir el año con amor.')">
+
+                    <div class="dia">31</div>
+
+                    <div class="fecha-info">
+                        <strong>Nochevieja</strong>
+                        <small>Último día del año</small>
+                    </div>
+
+                    <div class="icono-fecha">🥂</div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================================
+         RECORDATORIO
+    ========================================= -->
+
+    <section class="recordatorio">
+
+        <div class="decoracion">
+            ♡ ✦ ♡
+        </div>
+
+        <h2>
+            Siempre hay una razón para regalar
+        </h2>
+
+        <p>
+            No necesitas esperar una fecha especial.
+            Un pequeño detalle puede convertir cualquier día
+            en un recuerdo inolvidable. 💕
+        </p>
+
+        <a href="CATALOGO/catalogo.html" class="boton-catalogo">
+            🎁 Ver nuestro catálogo
+        </a>
+
+    </section>
+
+
+    <!-- =========================================
+         MODAL
+    ========================================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-contenido">
+
+            <button class="cerrar-modal" onclick="cerrarModal()">
+                ×
+            </button>
+
+            <div class="modal-icono" id="modalIcono">
+                💕
+            </div>
+
+            <h2 id="modalTitulo">
+                Fecha especial
+            </h2>
+
+            <strong id="modalFecha">
+                Fecha
+            </strong>
+
+            <p id="modalDescripcion">
+                Descripción
+            </p>
+
+            <div class="modal-regalo" id="modalRegalo">
+                💝 Idea de regalo
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        /* MENU */
+
+        function abrirMenu() {
+
+            document
+                .getElementById("menu")
+                .classList.toggle("activo");
+
+        }
+
+
+        /* MODAL */
+
+        function mostrarFecha(
+            icono,
+            titulo,
+            fecha,
+            descripcion,
+            regalo
+        ) {
+
+            document.getElementById("modalIcono").textContent = icono;
+
+            document.getElementById("modalTitulo").textContent = titulo;
+
+            document.getElementById("modalFecha").textContent = fecha;
+
+            document.getElementById("modalDescripcion").textContent = descripcion;
+
+            document.getElementById("modalRegalo").textContent = regalo;
+
+            document
+                .getElementById("modal")
+                .classList.add("activo");
+
+        }
+
+
+        function cerrarModal() {
+
+            document
+                .getElementById("modal")
+                .classList.remove("activo");
+
+        }
+
+
+        /* CERRAR MODAL AL TOCAR AFUERA */
+
+        document
+            .getElementById("modal")
+            .addEventListener("click", function(e) {
+
+                if (e.target === this) {
+                    cerrarModal();
+                }
+
+            });
+
+
+        /* FILTROS */
+
+        function activarBoton(boton) {
+
+            document
+                .querySelectorAll(".filtro")
+                .forEach(btn => {
+                    btn.classList.remove("activo");
+                });
+
+            boton.classList.add("activo");
+
+        }
+
+
+        function mostrarTodo(boton) {
+
+            activarBoton(boton);
+
+            document
+                .querySelectorAll(".mes")
+                .forEach(mes => {
+
+                    mes.style.display = "block";
+
+                });
+
+            document
+                .querySelectorAll(".fecha")
+                .forEach(fecha => {
+
+                    fecha.style.display = "flex";
+
+                });
+
+        }
+
+
+        function filtrar(tipo, boton) {
+
+            activarBoton(boton);
+
+            document
+                .querySelectorAll(".mes")
+                .forEach(mes => {
+
+                    let visibles = 0;
+
+                    mes
+                        .querySelectorAll(".fecha")
+                        .forEach(fecha => {
+
+                            if (
+                                fecha.dataset.tipo === tipo
+                            ) {
+
+                                fecha.style.display = "flex";
+
+                                visibles++;
+
+                            } else {
+
+                                fecha.style.display = "none";
+
+                            }
+
+                        });
+
+                    if (visibles === 0) {
+
+                        mes.style.display = "none";
+
+                    } else {
+
+                        mes.style.display = "block";
+
+                    }
+
+                });
+
+        }
+
+
+        /* ESC PARA CERRAR */
+
+        document.addEventListener("keydown", function(e) {
+
+            if (e.key === "Escape") {
+
+                cerrarModal();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
